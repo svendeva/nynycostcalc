@@ -98,6 +98,8 @@ $(document).ready(function(){
 		$('#specification').hide();	
 		alert("Nu er den fjernet");
 		alert("en anden ændring");
+		alert("en anden ændring");
+
 ()
 	});	
 
