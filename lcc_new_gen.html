@@ -1,0 +1,474 @@
+<!doctype html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>LCC_new_gen</title>
+    <link rel="stylesheet" type="text/css" href="lcc.css"/>
+
+
+    <script type="text/javascript" src="jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="lcc.js"></script>
+    <script type="text/javascript" src="lcctable.js"></script>
+    <script type="text/javascript" src="graf.js"></script>
+    <script type="text/javascript" src="calcNew.js"></script>
+
+    <script language="javascript" type="text/javascript" src="jquery.jqplot.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="jquery.jqplot.css" />
+    <script language="javascript" type="text/javascript" src="jqplot.logAxisRenderer.js"></script>
+    <script language="javascript" type="text/javascript" src="jqplot.barRenderer.min.js"></script>
+
+    <script type="text/javascript">
+    <!-- Variabels -->
+    var lccobj = {};
+    lccobj.nbsub = {};
+    lccobj.maintsub = {};
+    lccobj.refsub = {};
+    </script>
+
+
+   <meta name = "viewport" content = "width=device-width" border = "none">
+  </head>
+
+ 
+
+  <body>
+
+
+    <div class="backdrop"></div> 
+    <div class="box"><div class="close"></div>
+
+    
+    <!--This is the login routine for logging in-->
+      <fieldset>
+          <legend>Log-in information</legend>
+          <table>
+            <tr>
+              <th>E-mail</th>
+              <th class = "loginLength"><input type="text" id = "email" class="inputlength" value="jgc@svjo.dk"/></th>
+            </tr>
+            <tr>              
+              <th >Password</th>
+              <th class = "loginlength"><input type="password" id = "password" class="inputlength" value="svendeva"/></th>
+            </tr>
+            <tr>
+              <th></th>
+              <th><button id = "tryk" type="button">Login</button></th>
+            </tr>
+          </table>
+        </fieldset>
+    </div>
+
+    
+ <div class="box1"><div class="close"></div>
+    <!--This is the project input-->
+      <fieldset>
+          <legend>Project data</legend>
+          <table>
+            <tr>
+              <th class="projectlength">Project name</th>
+              <th><input type="text" id = "project_name" class="projectinput"value="Chinese bridge"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Structure type</th>
+              <th><input type="text" id = "project_type" class="projectinput" value="Bridge"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Structure area (sqm)</th>
+              <th><input type="text" id = "structure_area" class="projectinput" value="100000"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Design life (years)</th>
+              <th><input type="text" id = "design_life" class="projectinput" value="100"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Country</th>
+              <th><input type="text" id = "country" class="projectinput" value="China"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Interest rate (%)</th>
+              <th><input type="text" id = "interest_rate" class="projectinput" value="2"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Currency</th>
+              <th><input type="text" id = "currency" class="projectinput"value="Yan"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Inflation rate (%)</th>
+              <th><input type="text" id = "inflation_rate" class="projectinput" value="1"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Date</th>
+              <th><input type="text" id = "date" class="projectinput"value ="20-012012"/></th>
+            </tr>
+              <th></th>
+              <th><button id = "project_button" type="button">Continue</button></th>
+            </tr>
+          </table>
+        </fieldset>
+    </div>   
+    
+  	<div id="container">
+  		<div id = "title"> Life Cycle Calculation</div>
+      <button id = "logIn" type="button">Log In</button>
+      <div id = "lcclogo"><img src="images/lcclogo.png"/></div>
+      <div id = "topContainer">
+       
+      <div id = "topPicture"><img src = "images/collage.jpg"></div>
+  	  </div>
+
+      <ul id = "opCols">
+        <li>
+          <img src="images/opBridge.jpg"/>
+          <h2>Bridges</h2>
+          <p>Large steel bridges are normally designed for an expected lifetime of 100 years
+            In general therefore a number of maintenance and refurbishment operations will
+            take place during the lifetime of the structure. The life cycle calculation program enables optimalization over the lifetime based on the knowledge of today. Because of the future uncertainty, the program offers simulation of all parameters.
+          </p>
+        </li> 
+      </ul> 
+
+      <ul id = "opCols">
+        <li>
+          <img src="images/opTank.jpg"/>
+          <h2>Storage Tanks</h2>
+          <p>
+              Large steel tanks are generally situated in agressive atmospheres
+              often it is C5-industrial.
+              Tanks also require maintenance and total refurbishment after certain periods. In such cases the life cycle calculation program can assist taking optimal decisions about new construction coating systems and maintenance plans. Life cycle calculations and simulations can assist decision makers to make good decisions.
+          </p>
+        </li> 
+      </ul> 
+
+       <ul id = "opCols">
+        <li>
+          <img src="images/opInfra.jpg"/>
+          <h2>Infrastructure</h2>
+          <p>
+              Infrastructure projects are often complicated structure comprising steel structures that are difficult to access for maintenance and refurbishment. It is therefore important  that a lifecycle view is taken over the lifetime to minimize cost of staging surface preparation, paint application and access for these operations, and to optimize economy and reduce VOC over the lifetime. Maintenance cost is a major issue.
+
+          </p>
+        </li> 
+      </ul> 
+
+      <div id="footer">
+          <div id = "footerLeft">
+            <h2 id="footerText">Life Cycle Calculation program</h2>
+            The Life Cycle Calculation program (LCC) takes input from the project such as surface area, design life, interest rate, inflation rate, time to maintennce, time to refurbishment and other details.<br>
+            There is two versions of the life cycle calculation program the lite version that
+            gives an overview and simulation options in one screen and the full version with much more functionality, such as storage and retrieval of projects, printing and calculation modules for the cost of the various operations.
+          </div>
+
+          <div id ="footerRight">
+            <img src="images/imageFooter.jpg">
+
+
+          </div>
+
+        
+      </div>
+      <div id = "jgclogo"><img src="images/jgcLogo.png"/></div>
+    </div>
+
+    <div id="newcon" style="display:none">
+        <fieldset>
+          <legend >Select mode</legend>
+            <div id ="modeinput">
+              <input type="radio" name="calculation" id="calculate">Calculate values
+              <input type="radio" name="calculation" id="insert">Insert values
+              <input type="radio" name="calculation" id="demo">Demo
+              <!--<button id = "mode_select" type="button"  class="mode_select_button" >Go</button>-->
+            </div>
+
+      <div id="demonstrate" style="display:none">
+        <fieldset>
+            <legend >Demo new construction</legend>
+              <table  id="new_con_data">
+                <tr>
+                  <th class="projectlength">Cost/sqm</th>
+                  <th><input type="text" id = "new_cost" class="costinput"value="143"/></th>
+                </tr>
+                <tr>              
+                  <th  class="projectlength">Time to maintenance (years)</th>
+                  <th><input type="text" id = "new_maint_time" class="costinput" value="7"/></th>
+                </tr>
+                <tr>              
+                  <th  class="projectlength">Time to refurbishment (years)</th>
+                  <th><input type="text" id = "new_refurb_time" class="costinput" value="30"/></th>
+                </tr>
+                <tr>
+                  <button id = "new_return" type="button"  class="new_return_button" style = "display:none">Return</button>
+                </tr>
+              </table>
+        </fieldset>
+    
+         <fieldset>
+          <legend>Maintenance</legend>
+            <table id="maint_con_data">
+              <tr>
+                <th class="projectlength">Maintenance Cost/sqm</th>
+                <th><input type="text" id = "maint_cost" class="costinput"value="3611863"/></th>
+              </tr>
+              
+            </table>
+        </fieldset>
+        <fieldset>
+          <legend>Refurbishment</legend>
+          <table id ="ref_con_data">
+            <tr>
+              <th class="projectlength">Cost/sqm</th>
+              <th><input type="text" id = "ref_cost" class="costinput"value="143"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Time to maintenance (years)</th>
+              <th ><input type="text" id = "ref_maint_time" class="costinput" value="7"/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Time to refurbishment (years)</th>
+              <th><input type="text" id = "ref_refurb_time" class="costinput" value="30"/></th>
+            </tr>
+           
+            
+          </table>
+        </fieldset>
+
+        </div>
+
+
+        <div id="lccinsert" style="display:none">
+          <fieldset>
+              <legend >Insert new construction</legend>
+                <table  id="new_calc_data">
+                  <tr>
+                    <th class="projectlength">Cost/sqm</th>
+                    <th><input type="text" id = "new_calc_cost" class="costinput"value=""/></th>
+                  </tr>
+                  <tr>              
+                    <th  class="projectlength">Time to maintenance (years)</th>
+                    <th><input type="text" id = "maint_calc_time" class="costinput" value=""/></th>
+                  </tr>
+                  <tr>              
+                    <th  class="projectlength">Time to refurbishment (years)</th>
+                    <th><input type="text" id = "refurb_calc_time" class="costinput" value=""/></th>
+                  </tr>
+                  
+                </table>
+          </fieldset>
+    
+         <fieldset>
+          <legend>Maintenance</legend>
+            <table id="maint_calc_data">
+              <tr>
+                <th class="projectlength">Maintenance Cost/sqm</th>
+                <th><input type="text" id = "maint_calc_cost" class="costinput"value=""/></th>
+              </tr>
+              
+            </table>
+        </fieldset>
+        <fieldset>
+          <legend>Refurbishment</legend>
+          <table id ="refurb_calc_data">
+            <tr>
+              <th class="projectlength">Cost/sqm</th>
+              <th><input type="text" id = "ref_calc_cost" class="costinput"value=""/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Time to maintenance (years)</th>
+              <th ><input type="text" id = "ref_maint_calc_time" class="costinput" value=""/></th>
+            </tr>
+            <tr>              
+              <th  class="projectlength">Time to refurbishment (years)</th>
+              <th><input type="text" id = "ref_refurb_calc_time" class="costinput" value=""/></th>
+            </tr>
+            
+          </table>
+        </fieldset>
+
+        </div>
+
+        <div id="lcccalculate" style="display:none">
+          <fieldset>
+              <legend >Calculate new construction</legend>
+                   <table  id="calc_new_data">
+                <tr>
+                  <th class="projectlength">Cost/sqm</th>
+                  <th><input type="text" id = "calcNewCost" class="costinput"value=""/></th>
+                </tr>
+                <tr>              
+                  <th  class="projectlength">Time to maintenance (years)</th>
+                  <th><input type="text" id = "nb_calc_maint_time" class="costinput" value=""/></th>
+                </tr>
+                <tr>              
+                  <th  class="projectlength">Time to refurbishment (years)</th>
+                  <th><input type="text" id = "nb_calc_refurb_time" class="costinput" value=""/></th>
+                </tr>
+                <tr>
+                  <button id = "newCalcReturn" type="button"  class="new_return_button" style = "display:none">Return</button>
+                </tr>
+              </table>
+
+
+
+          </fieldset>
+
+        </div>
+
+
+
+
+
+          </fieldset>
+          <br>
+          <button id = "simulate" type="button" style="display:none">Start simulation</button>
+    </div>
+
+    <div id="specification" style="display:none">
+      <fieldset>
+              <legend> New construction - Calculate cost input</legend>
+              <button id ="calcNewButton" type "button">New construction</button>
+
+              <!--Select surface preparation-->
+              <select id="nb_surf_prep">
+                <option value="Choose">Choose surface prep</option>
+                <option value="St 2">St 2</option>
+                <option value="Sa 1">Sa 1</option>
+                <option value="Sa 2&frac12;">Sa 2&frac12</option>
+                <option value="Sa 3">Sa 3</option>
+              </select>
+              <!-- Select Number of coats-->
+              <select class = "dropdown" id="nb_nocoats">
+                <option class = "dropdown" value="0">Choose number of coats</option>
+                <option class = "dropdown" value="1">1</option>
+                <option class = "dropdown" value="2">2</option>
+                <option class = "dropdown" value="3">3</option>
+                <option class = "dropdown" value="4">4</option>
+                <option class = "dropdown" value="5">5</option>
+                <option class = "dropdown" value="6">6</option>
+              </select>
+
+
+
+              <button id ="calcMaintButton" type "button">Maintenance</button>
+              <button id ="calcRefurbButton" type "button">Refurbishment</button>
+              <br>
+              <span id = "surfpreptag" style="display:none">Surface preparation is</span>
+               &nbsp 
+               <span id = "surfshow"> </span>&nbsp
+               <span id = "showplease" style="display:none">Please input the surface preparation cost in </span>&nbsp <span id = "projectCurrency">
+             </span>&nbsp <input type="text" id="nbsurfprep_in" style="display:none"/>
+               <span><button id ="nbContSurfPrep"style="display:none">Continue</button></span>
+               
+               
+              
+
+
+
+              
+
+
+              <div id = "nbline1" style="display:none" class="nblines">
+                <span>Product 1</span> &nbsp <input type="text" id="nb_product1"/>
+                <span>Dft 1</span> &nbsp <input type="text" id="nb_dft1" class="dft"/>
+                <span>Price 1</span> &nbsp <input type="text" id="nb_price1" class="dft"/>
+                <span>Solids 1</span> &nbsp <input type="text" id="nb_solids1" class="dft"/>
+                <span>VOC 1</span> &nbsp <input type="text" id="nb_VOC1" class="dft"/>
+                <span>Loss 1</span> &nbsp <input type="text" id="nb_loss1" class="dft"/>
+                <span>Appl cost 1</span> &nbsp <input type="text" id="nb_applcost1" class="dft"/>
+                <span>Sp. gr. 1</span> &nbsp <input type="text" id="nb_spgr1" class="dft"/>
+              </div>
+              <div id = "nbline2" style="display:none" class="nblines">
+                <span>Product 2</span> &nbsp <input type="text" id="nb_product2"/>
+                <span>Dft 2</span> &nbsp <input type="text" id="nb_dft2" class="dft"/>
+                <span>Price 2</span> &nbsp <input type="text" id="nb_price2" class="dft"/>
+                <span>Solids 2</span> &nbsp <input type="text" id="nb_solids2" class="dft"/>
+                <span>VOC 2</span> &nbsp <input type="text" id="nb_VOC2" class="dft"/>
+                <span>Loss 2</span> &nbsp <input type="text" id="nb_loss2" class="dft"/>
+                <span>Appl cost 2</span> &nbsp <input type="text" id="nb_applcost2" class="dft"/>
+                <span>Sp. gr. 2</span> &nbsp <input type="text" id="nb_spgr2" class="dft"/>
+              </div>
+              <div id = "nbline3" style="display:none" class="nblines">
+                <span>Product 3</span> &nbsp <input type="text" id="nb_product3"/>
+                <span>Dft 3</span> &nbsp <input type="text" id="nb_dft3" class="dft"/>
+                <span>Price 3</span> &nbsp <input type="text" id="nb_price3" class="dft"/>
+                <span>Solids 3</span> &nbsp <input type="text" id="nb_solids3" class="dft"/>
+                <span>VOC 3</span> &nbsp <input type="text" id="nb_VOC3" class="dft"/>
+                <span>Loss 3</span> &nbsp <input type="text" id="nb_loss3" class="dft"/>
+                <span>Appl cost 3</span> &nbsp <input type="text" id="nb_applcost3" class="dft"/>
+                <span>Sp. gr. 3</span> &nbsp <input type="text" id="nb_spgr3" class="dft"/>
+              </div>
+              <div id = "nbline4" style="display:none" class="nblines">
+                <span>Product 4</span> &nbsp <input type="text" id="nb_product4"/>
+                <span>Dft 4</span> &nbsp <input type="text" id="nb_dft4" class="dft"/>
+                <span>Price 4</span> &nbsp <input type="text" id="nb_price4" class="dft"/>
+                <span>Solids 4</span> &nbsp <input type="text" id="nb_solids4" class="dft"/>
+                <span>VOC 4</span> &nbsp <input type="text" id="nb_VOC4" class="dft"/>
+                <span>Loss 4</span> &nbsp <input type="text" id="nb_loss4" class="dft"/>
+                <span>Appl cost 4</span> &nbsp <input type="text" id="nb_applcost4" class="dft"/>
+                <span>Sp. gr. 4</span> &nbsp <input type="text" id="nb_spgr4" class="dft"/>
+              </div>
+              <div id = "nbline5" style="display:none" class="nblines">
+                <span>Product 5</span> &nbsp <input type="text" id="nb_product5"/>
+                <span>Dft 5</span> &nbsp <input type="text" id="nb_dft5" class="dft"/>
+                <span>Price 5</span> &nbsp <input type="text" id="nb_price5" class="dft"/>
+                <span>Solids 5</span> &nbsp <input type="text" id="nb_solids5" class="dft"/>
+                <span>VOC 5</span> &nbsp <input type="text" id="nb_VOC5" class="dft"/>
+                <span>Loss 5</span> &nbsp <input type="text" id="nb_loss5" class="dft"/>
+                <span>Appl cost 5</span> &nbsp <input type="text" id="nb_applcost5" class="dft"/>
+                <span>Sp. gr. 5</span> &nbsp <input type="text" id="nb_spgr5" class="dft"/>
+              </div>
+              <div id = "nbline6" style="display:none" class="nblines">
+                <span>Product 6</span> &nbsp <input type="text" id="nb_product6"/>
+                <span>Dft 6</span> &nbsp <input type="text" id="nb_dft6" class="dft"/>
+                <span>Price 6</span> &nbsp <input type="text" id="nb_price6" class="dft"/>
+                <span>Solids 6</span> &nbsp <input type="text" id="nb_solids6" class="dft"/>
+                <span>VOC 6</span> &nbsp <input type="text" id="nb_VOC6" class="dft"/>
+                <span>Loss 6</span> &nbsp <input type="text" id="nb_loss6" class="dft"/>
+                <span>Appl cost 6</span> &nbsp <input type="text" id="nb_applcost6" class="dft"/>
+                <span>Sp. gr. 6</span> &nbsp <input type="text" id="nb_spgr6" class="dft"/>
+              </div>
+              <div id = "nbtimes" style="display:none">
+                <span>  Time to maintenance (years)</span> &nbsp<span> <input type="text" id="nb_maint_time" class="dft"/><br>
+                <span>  Time to refurbishment (years)</span> &nbsp <input type="text" id="nb_refurb_time" class="dft"/>
+              </div>
+              <div><button id = "nb_time_btn" style="display:none">Times continue</button></div>
+
+              <div><button id = "testcalc" style="display:none">Continue</button></div>
+            </fieldset>
+    </div>
+
+   
+
+
+
+    <!-- This is the lcc table-->
+     <div id="lcccon" style="display:none">
+        <fieldset>
+          <legend> Life cycle calculation</legend>
+            <!-- Resulting table-->
+             <table id="lcctable" style ="display:none">
+                <thead>
+                  <tr>
+                    <td class="lcc_table_year">Year</td>
+                    <td class="lcc_table_task">Task</td>
+                    <td class="lcc_table_cost">Cost</td>
+                    <td class="lcc_table_npv">NPV</td>
+                  </tr>
+                </thead>
+                <tbody id="tablebody">
+                  <td> Newyear</td>
+                </tbody> 
+
+             </table>
+        </fieldset>
+
+        <br>
+        
+        <button id = "projectSim" type="button">Change project data</button>
+        <button id = "grafSim" type="button" style ="display:none">Show graph</button>
+        <button id = "chartdelete" type="button" style ="display:none">Remove chart</button>
+     </div>
+
+
+
+</body>
+  
+</html>
