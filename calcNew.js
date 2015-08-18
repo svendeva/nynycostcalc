@@ -96,11 +96,9 @@ $(document).ready(function(){
 		var time2 = $('#nb_refurb_time').val();
 		$('#nb_calc_refurb_time').attr("value",time2);
 		$('#specification').hide();	
-		alert("Nu er den fjernet");
-		alert("en anden ændring");
-		alert("en anden ændring");
-
-()
+		console.log("her");
+		$('#svend').show();
+		console.log("og her");	
 	});	
 
 		//NB surface preparation function selectors
