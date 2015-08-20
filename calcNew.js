@@ -14,7 +14,10 @@ $(document).ready(function(){
 	        	disable("calcMaintButton");
 	        	disable("calcRefurbButton");
 	        	disable("nb_nocoats");
-	        	$('#specification').show();
+
+
+
+	        	$('#nb_spec').show();
 	        	$('#lcccalculate').show();
 	        }
      });
@@ -95,10 +98,8 @@ $(document).ready(function(){
 		$('#nb_calc_maint_time').attr("value",time1);
 		var time2 = $('#nb_refurb_time').val();
 		$('#nb_calc_refurb_time').attr("value",time2);
-		$('#specification').hide();	
-		console.log("her");
-		$('#svend').show();
-		console.log("og her");	
+		$('#nb_spec').hide();	
+		$('#maint_calc').show();
 	});	
 
 		//NB surface preparation function selectors

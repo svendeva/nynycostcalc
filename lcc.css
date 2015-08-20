@@ -230,7 +230,7 @@ ul#opCols li h2 {
 	z-index: 52;
 }
 
-#specification{
+.specification{
 	position: absolute;
 	top: 350px;
 	left: 25px;
