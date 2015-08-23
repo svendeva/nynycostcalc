@@ -102,7 +102,7 @@ $(document).ready(function(){
 		$('#maint_calc').show();
 	});	
 
-		//NB surface preparation function selectors
+	//NB surface preparation function selectors
 	$('#nb_surf_prep').on('change', function() {
 
 		var surfprep = document.getElementById("nb_surf_prep").value;
@@ -112,6 +112,38 @@ $(document).ready(function(){
 		$('#showplease').show();
 		$('#nbsurfprep_in').show();
 		$('#nbContSurfPrep').show();
+		enable();
+
+
+		if(surfprep == "St 2"){
+			$('#surfshow').text(surfprep);
+			$('#projectCurrency').text(currency + " " + "per SQM");
+
+		}
+		if(surfprep =="Sa 1"){
+			$('#surfshow').text(surfprep);
+			$('#projectCurrency').text(currency + " " + "per SQM");
+		}
+		if(surfprep == "Sa 2½"){
+			$('#surfshow').text(surfprep);
+			$('#projectCurrency').text(currency + " " + "per SQM");
+		}
+		if(surfprep =="Sa 3"){
+			$('#surfshow').text(surfprep);
+			$('#projectCurrency').text(currency + " " + "per SQM");
+		}
+	});
+
+		//NB surface preparation function selectors
+	$('#maint_surf_prep').on('change', function() {
+
+		var surfprep = document.getElementById("maint_surf_prep").value;
+		
+		$('#maint_surfpreptag').show(); 
+		$('#maint_surfshow').show();
+		$('#maint_showplease').show();
+		$('#maint_surfprep_in').show();
+		$('#maint_ContSurfPrep').show();
 		enable();
 
 

@@ -469,23 +469,21 @@
 
 
 
-              </fieldset>
 
-    </div>
 
-<!--             
+            
 
 
 
-              <button id ="calcMaintButton" type "button">Maintenance</button>
-              <button id ="calcRefurbButton" type "button">Refurbishment</button>
+              <button id ="maint_calcMaintButton" type "button">Maintenance</button>
+              <button id ="maint_calcRefurbButton" type "button">Refurbishment</button>
               <br>
-              <span id = "surfpreptag" style="display:none">Surface preparation is</span>
+              <span id = "maint_surfpreptag" style="display:none">Surface preparation is</span>
                &nbsp 
-               <span id = "surfshow"> </span>&nbsp
-               <span id = "showplease" style="display:none">Please input the surface preparation cost in </span>&nbsp <span id = "projectCurrency">
-             </span>&nbsp <input type="text" id="nbsurfprep_in" style="display:none"/>
-               <span><button id ="nbContSurfPrep"style="display:none">Continue</button></span>
+               <span id = "maint_surfshow"> </span>&nbsp
+               <span id = "maint_showplease" style="display:none">Please input the surface preparation cost in </span>&nbsp <span id = "projectCurrency">
+             </span>&nbsp <input type="text" id="maint_surfprep_in" style="display:none"/>
+               <span><button id ="maint_ContSurfPrep"style="display:none">Continue</button></span>
                
                
               
@@ -495,16 +493,21 @@
               
 
 
-              <div id = "nbline1" style="display:none" class="nblines">
-                <span>Product 1</span> &nbsp <input type="text" id="nb_product1"/>
-                <span>Dft 1</span> &nbsp <input type="text" id="nb_dft1" class="dft"/>
-                <span>Price 1</span> &nbsp <input type="text" id="nb_price1" class="dft"/>
-                <span>Solids 1</span> &nbsp <input type="text" id="nb_solids1" class="dft"/>
-                <span>VOC 1</span> &nbsp <input type="text" id="nb_VOC1" class="dft"/>
-                <span>Loss 1</span> &nbsp <input type="text" id="nb_loss1" class="dft"/>
-                <span>Appl cost 1</span> &nbsp <input type="text" id="nb_applcost1" class="dft"/>
-                <span>Sp. gr. 1</span> &nbsp <input type="text" id="nb_spgr1" class="dft"/>
+              <div id = "maintline1" style="display:none" class="nblines">
+                <span>Product 1</span> &nbsp <input type="text" id="maint_product1"/>
+                <span>Dft 1</span> &nbsp <input type="text" id="maint_dft1" class="dft"/>
+                <span>Price 1</span> &nbsp <input type="text" id="maint_price1" class="dft"/>
+                <span>Solids 1</span> &nbsp <input type="text" id="maint_solids1" class="dft"/>
+                <span>VOC 1</span> &nbsp <input type="text" id="maint_VOC1" class="dft"/>
+                <span>Loss 1</span> &nbsp <input type="text" id="maint_loss1" class="dft"/>
+                <span>Appl cost 1</span> &nbsp <input type="text" id="maint_applcost1" class="dft"/>
+                <span>Sp. gr. 1</span> &nbsp <input type="text" id="maint_spgr1" class="dft"/>
               </div>
+
+              </fieldset>
+    </div>
+<!-- 
+
               <div id = "nbline2" style="display:none" class="nblines">
                 <span>Product 2</span> &nbsp <input type="text" id="nb_product2"/>
                 <span>Dft 2</span> &nbsp <input type="text" id="nb_dft2" class="dft"/>
