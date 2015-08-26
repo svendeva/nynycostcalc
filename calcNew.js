@@ -37,6 +37,21 @@ $(document).ready(function(){
 
      });
 
+	$('#maintContSurfPrep').click(function (){
+			maintcalcSurfPrep = $('#maint_surfprep_in').val();
+			//$('#calcNewCost').attr("value",calcSurfPrep);
+			$('#lcccalculate').show();
+			$('#maint_surfprep_in').hide();
+			$('#maint_showplease').hide();
+			$('#maint_surfpreptag').hide();
+			$('#maint_surfshow').hide();
+			$('#projectCurrency').hide();
+			$('#maint_ContSurfPrep').hide();
+			disable("maint_surf_prep");
+			$('#testcalc').show();
+
+     });
+
 
 
 	$('#testcalc').click(function (){
@@ -117,28 +132,33 @@ $(document).ready(function(){
 
 		if(surfprep == "St 2"){
 			$('#surfshow').text(surfprep);
-			$('#projectCurrency').text(currency + " " + "per SQM");
+			$('.projectCurrency').text(currency + " " + "per SQM");
 
 		}
 		if(surfprep =="Sa 1"){
 			$('#surfshow').text(surfprep);
-			$('#projectCurrency').text(currency + " " + "per SQM");
+			$('.projectCurrency').text(currency + " " + "per SQM");
 		}
 		if(surfprep == "Sa 2½"){
 			$('#surfshow').text(surfprep);
-			$('#projectCurrency').text(currency + " " + "per SQM");
+			$('.projectCurrency').text(currency + " " + "per SQM");
 		}
 		if(surfprep =="Sa 3"){
 			$('#surfshow').text(surfprep);
-			$('#projectCurrency').text(currency + " " + "per SQM");
+			$('.projectCurrency').text(currency + " " + "per SQM");
 		}
 	});
 
 		//NB surface preparation function selectors
 	$('#maint_surf_prep').on('change', function() {
 
-		var surfprep = document.getElementById("maint_surf_prep").value;
-		
+		var maint_surfprep = document.getElementById("maint_surf_prep").value;
+
+		console.log(maint_surfprep);
+		console.log("maintenance");
+		console.log(currency);
+
+
 		$('#maint_surfpreptag').show(); 
 		$('#maint_surfshow').show();
 		$('#maint_showplease').show();
@@ -147,33 +167,77 @@ $(document).ready(function(){
 		enable();
 
 
-		if(surfprep == "St 2"){
-			$('#surfshow').text(surfprep);
-			$('#projectCurrency').text(currency + " " + "per SQM");
+		if(maint_surfprep == "St 2"){
+			$('#maint_surfshow').text(maint_surfprep);
+			$('.projectCurrency').text(currency + " " + "per SQM");
 
 		}
-		if(surfprep =="Sa 1"){
-			$('#surfshow').text(surfprep);
-			$('#projectCurrency').text(currency + " " + "per SQM");
+		if(maint_surfprep =="Sa 1"){
+			$('#maint_surfshow').text(maint_surfprep);
+			$('.projectCurrency').text(currency + " " + "per SQM");
 		}
-		if(surfprep == "Sa 2½"){
-			$('#surfshow').text(surfprep);
-			$('#projectCurrency').text(currency + " " + "per SQM");
+		if(maint_surfprep == "Sa 2½"){
+			$('#maint_surfshow').text(maint_surfprep);
+			$('.projectCurrency').text(currency + " " + "per SQM");
 		}
-		if(surfprep =="Sa 3"){
-			$('#surfshow').text(surfprep);
-			$('#projectCurrency').text(currency + " " + "per SQM");
+		if(maint_surfprep =="Sa 3"){
+			$('#maint_surfshow').text(maint_surfprep);
+			$('.projectCurrency').text(currency + " " + "per SQM");
 		}
 	});
 
 
 
-	//NB Number of coat function selectors
+	//NB Number of newbuilding coat function selectors
 	$('#nb_nocoats').on('change', function() {
 		lccobj.nbsub.coats = parseInt(document.getElementById("nb_nocoats").value);
 		if(lccobj.nbsub.coats ==1){
 			$('.nblines').hide();
 			$('#nbline1').show();
+		}
+		if(lccobj.nbsub.coats ==2){
+			$('.nblines').hide();
+			$('#nbline1').show();
+			$('#nbline2').show();
+		}
+		if(lccobj.nbsub.coats ==3){
+			$('.nblines').hide();
+			$('#nbline1').show();
+			$('#nbline2').show();
+			$('#nbline3').show();
+		}
+		if(lccobj.nbsub.coats ==4){
+			$('.nblines').hide();
+			$('#nbline1').show();
+			$('#nbline2').show();
+			$('#nbline3').show();
+			$('#nbline4').show();
+		}
+		if(lccobj.nbsub.coats ==5){
+			$('.nblines').hide();
+			$('#nbline1').show();
+			$('#nbline2').show();
+			$('#nbline3').show();
+			$('#nbline4').show();
+			$('#nbline5').show();
+		}
+		if(lccobj.nbsub.coats ==6){
+			$('#nbline1').show();
+			$('#nbline2').show();
+			$('#nbline3').show();
+			$('#nbline4').show();
+			$('#nbline5').show();
+			$('#nbline6').show();
+		}
+		console.log("Number of coats are : " + lccobj.nbsub.coats);
+	});
+
+	//NB Number of newbuilding coat function selectors
+	$('#maint_nocoats').on('change', function() {
+		lccobj.maintsub.coats = parseInt(document.getElementById("maint_nocoats").value);
+		if(lccobj.maintsub.coats ==1){
+			$('.maintlines').hide();
+			$('#maintline1').show();
 		}
 		if(lccobj.nbsub.coats ==2){
 			$('.nblines').hide();

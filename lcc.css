@@ -273,6 +273,7 @@ ul#opCols li h2 {
 
 #maint_con_data{
 	display: none;
+	font-weight: normal;
 }
 
 #ref_con_data{
@@ -342,15 +343,21 @@ ul#opCols li h2 {
 	width: 50px;
 }
 
-#surfshow {
+.surfshow {
 	font-weight: bold;
 }
 
-#projectCurrency{
+.projectCurrency{
 	font-weight: bold;
 }
 
 #nbsurfprep_in{
+	width: 75px;
+	text-align: center;
+
+}
+
+#maint_surfprep_in{
 	width: 75px;
 	text-align: center;
 
