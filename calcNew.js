@@ -48,13 +48,67 @@ $(document).ready(function(){
 			$('#projectCurrency').hide();
 			$('#maint_ContSurfPrep').hide();
 			disable("maint_surf_prep");
-			$('#testcalc').show();
+			$('#maint_testcalc').show();
 
      });
 
 
 
 	$('#testcalc').click(function (){
+		if(lccobj.nbsub.coats == 1){
+			lccobj.nbsub.sqmprice1 = enlinie();
+			$('#calcNewCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
+			$('#nbline1').hide();
+			disable("nb_nocoats");
+			$('#testcalc').hide();
+			$('#nbtimes').show();
+			$('#nb_time_btn').show();
+		}
+		if(lccobj.nbsub.coats == 2){
+			lccobj.nbsub.sqmprice1 = enlinie();
+			lccobj.nbsub.sqmprice2 = tolinie();
+			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2;
+			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
+		}
+		if(lccobj.nbsub.coats == 3){
+			lccobj.nbsub.sqmprice1 = enlinie();
+			lccobj.nbsub.sqmprice2 = tolinie();
+			lccobj.nbsub.sqmprice3 = trelinie();
+			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3;
+			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
+		}
+		if(lccobj.nbsub.coats == 4){
+			lccobj.nbsub.sqmprice1 = enlinie();
+			lccobj.nbsub.sqmprice2 = tolinie();
+			lccobj.nbsub.sqmprice3 = trelinie();
+			lccobj.nbsub.sqmprice4 = firelinie();
+			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3  + lccobj.nbsub.sqmprice4;
+			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
+		}
+		if(lccobj.nbsub.coats == 5){
+			lccobj.nbsub.sqmprice1 = enlinie();
+			lccobj.nbsub.sqmprice2 = tolinie();
+			lccobj.nbsub.sqmprice3 = trelinie();
+			lccobj.nbsub.sqmprice4 = firelinie();
+			lccobj.nbsub.sqmprice5 = femlinie();
+			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3  + lccobj.nbsub.sqmprice4  + lccobj.nbsub.sqmprice5;
+			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
+		}
+		if(lccobj.nbsub.coats == 6){
+			lccobj.nbsub.sqmprice1 = enlinie();
+			lccobj.nbsub.sqmprice2 = tolinie();
+			lccobj.nbsub.sqmprice3 = trelinie();
+			lccobj.nbsub.sqmprice4 = firelinie();
+			lccobj.nbsub.sqmprice5 = femlinie();
+			lccobj.nbsub.sqmprice6 = sekslinie();
+			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3  + lccobj.nbsub.sqmprice4  + lccobj.nbsub.sqmprice5 + lccobj.nbsub.sqmprice6;
+			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
+		}
+
+		
+	});
+
+$('#maint_testcalc').click(function (){
 		if(lccobj.nbsub.coats == 1){
 			lccobj.nbsub.sqmprice1 = enlinie();
 			$('#calcNewCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
@@ -154,16 +208,11 @@ $(document).ready(function(){
 
 		var maint_surfprep = document.getElementById("maint_surf_prep").value;
 
-		console.log(maint_surfprep);
-		console.log("maintenance");
-		console.log(currency);
-
-
 		$('#maint_surfpreptag').show(); 
 		$('#maint_surfshow').show();
 		$('#maint_showplease').show();
 		$('#maint_surfprep_in').show();
-		$('#maint_ContSurfPrep').show();
+		$('#maintContSurfPrep').show();
 		enable();
 
 
@@ -229,7 +278,6 @@ $(document).ready(function(){
 			$('#nbline5').show();
 			$('#nbline6').show();
 		}
-		console.log("Number of coats are : " + lccobj.nbsub.coats);
 	});
 
 	//NB Number of newbuilding coat function selectors
@@ -273,7 +321,6 @@ $(document).ready(function(){
 			$('#nbline5').show();
 			$('#nbline6').show();
 		}
-		console.log("Number of coats are : " + lccobj.nbsub.coats);
 	});
 
 	function disable(abc) {
