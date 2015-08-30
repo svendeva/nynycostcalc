@@ -30,7 +30,7 @@ $(document).ready(function(){
 		$('#projectCurrency').hide();
 		$('#maint_ContSurfPrep').hide();
 		disable("maint_surf_prep");
-		$('#maint_testcalc').show();
+		S$('#maint_testcalc').show();
      });
 
 	//Maint surface preparation function selectors
@@ -53,7 +53,9 @@ $(document).ready(function(){
 		}
 		if(maint_surfprep == "Sa 2½"){
 			$('#maint_surfshow').text(maint_surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
+
+			//$('#maintProjectCurrency').text(currency + " " + "per SQM");
+			$('#maintProjectCurrency').show();
 		}
 		if(maint_surfprep =="Sa 3"){
 			$('#maint_surfshow').text(maint_surfprep);
