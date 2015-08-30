@@ -1,7 +1,6 @@
 $(document).ready(function(){
 
-
-
+	//Show nb container
 	$('#calculate').click(function (){
     		if(document.getElementById('calculate').checked) {
 	        	$('#demonstrate').hide();
@@ -14,46 +13,99 @@ $(document).ready(function(){
 	        	disable("calcMaintButton");
 	        	disable("calcRefurbButton");
 	        	disable("nb_nocoats");
-
-
-
 	        	$('#nb_spec').show();
 	        	$('#lcccalculate').show();
 	        }
      });
 
+	//NB surface preparation function selectors
+	$('#nb_surf_prep').on('change', function() {
+		var surfprep = document.getElementById("nb_surf_prep").value;
+		$('#surfpreptag').show(); 
+		$('#surfshow').show();
+		$('#showplease').show();
+		$('#nbsurfprep_in').show();
+		$('#nbContSurfPrep').show();
+		enable();
+
+		if(surfprep == "St 2"){
+			$('#surfshow').text(surfprep);
+			$('.projectCurrency').text(currency + " " + "per SQM");
+
+		}
+		if(surfprep =="Sa 1"){
+			$('#surfshow').text(surfprep);
+			$('.projectCurrency').text(currency + " " + "per SQM");
+		}
+		if(surfprep == "Sa 2½"){
+			$('#surfshow').text(surfprep);
+			$('.projectCurrency').text(currency + " " + "per SQM");
+		}
+		if(surfprep =="Sa 3"){
+			$('#surfshow').text(surfprep);
+			$('.projectCurrency').text(currency + " " + "per SQM");
+		}
+	});
+
+		//NB Number of newbuilding coat function selectors
+	$('#nb_nocoats').on('change', function() {
+		lccobj.nbsub.coats = parseInt(document.getElementById("nb_nocoats").value);
+		if(lccobj.nbsub.coats ==1){
+			$('.nblines').hide();
+			$('#nbline1').show();
+		}
+		if(lccobj.nbsub.coats ==2){
+			$('.nblines').hide();
+			$('#nbline1').show();
+			$('#nbline2').show();
+		}
+		if(lccobj.nbsub.coats ==3){
+			$('.nblines').hide();
+			$('#nbline1').show();
+			$('#nbline2').show();
+			$('#nbline3').show();
+		}
+		if(lccobj.nbsub.coats ==4){
+			$('.nblines').hide();
+			$('#nbline1').show();
+			$('#nbline2').show();
+			$('#nbline3').show();
+			$('#nbline4').show();
+		}
+		if(lccobj.nbsub.coats ==5){
+			$('.nblines').hide();
+			$('#nbline1').show();
+			$('#nbline2').show();
+			$('#nbline3').show();
+			$('#nbline4').show();
+			$('#nbline5').show();
+		}
+		if(lccobj.nbsub.coats ==6){
+			$('#nbline1').show();
+			$('#nbline2').show();
+			$('#nbline3').show();
+			$('#nbline4').show();
+			$('#nbline5').show();
+			$('#nbline6').show();
+		}
+	});
+
+	//Calculates squaremeter price and total
 	$('#nbContSurfPrep').click(function (){
 			calcSurfPrep = $('#nbsurfprep_in').val();
-			//$('#calcNewCost').attr("value",calcSurfPrep);
 			$('#lcccalculate').show();
 			$('#nbsurfprep_in').hide();
 			$('#showplease').hide();
+			$('#nbProjectCurrency').hide();
 			$('#surfpreptag').hide();
 			$('#surfshow').hide();
 			$('#projectCurrency').hide();
 			$('#nbContSurfPrep').hide();
 			disable("nb_surf_prep");
 			$('#testcalc').show();
-
      });
 
-	$('#maintContSurfPrep').click(function (){
-			maintcalcSurfPrep = $('#maint_surfprep_in').val();
-			//$('#calcNewCost').attr("value",calcSurfPrep);
-			$('#lcccalculate').show();
-			$('#maint_surfprep_in').hide();
-			$('#maint_showplease').hide();
-			$('#maint_surfpreptag').hide();
-			$('#maint_surfshow').hide();
-			$('#projectCurrency').hide();
-			$('#maint_ContSurfPrep').hide();
-			disable("maint_surf_prep");
-			$('#maint_testcalc').show();
-
-     });
-
-
-
+	//Calculates squaremeter price and total for the number of layers
 	$('#testcalc').click(function (){
 		if(lccobj.nbsub.coats == 1){
 			lccobj.nbsub.sqmprice1 = enlinie();
@@ -104,232 +156,19 @@ $(document).ready(function(){
 			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3  + lccobj.nbsub.sqmprice4  + lccobj.nbsub.sqmprice5 + lccobj.nbsub.sqmprice6;
 			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
 		}
-
-		
 	});
 
-$('#maint_testcalc').click(function (){
-		if(lccobj.nbsub.coats == 1){
-			lccobj.nbsub.sqmprice1 = enlinie();
-			$('#calcNewCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
-			$('#nbline1').hide();
-			disable("nb_nocoats");
-			$('#testcalc').hide();
-			$('#nbtimes').show();
-			$('#nb_time_btn').show();
-		}
-		if(lccobj.nbsub.coats == 2){
-			lccobj.nbsub.sqmprice1 = enlinie();
-			lccobj.nbsub.sqmprice2 = tolinie();
-			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2;
-			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
-		}
-		if(lccobj.nbsub.coats == 3){
-			lccobj.nbsub.sqmprice1 = enlinie();
-			lccobj.nbsub.sqmprice2 = tolinie();
-			lccobj.nbsub.sqmprice3 = trelinie();
-			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3;
-			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
-		}
-		if(lccobj.nbsub.coats == 4){
-			lccobj.nbsub.sqmprice1 = enlinie();
-			lccobj.nbsub.sqmprice2 = tolinie();
-			lccobj.nbsub.sqmprice3 = trelinie();
-			lccobj.nbsub.sqmprice4 = firelinie();
-			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3  + lccobj.nbsub.sqmprice4;
-			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
-		}
-		if(lccobj.nbsub.coats == 5){
-			lccobj.nbsub.sqmprice1 = enlinie();
-			lccobj.nbsub.sqmprice2 = tolinie();
-			lccobj.nbsub.sqmprice3 = trelinie();
-			lccobj.nbsub.sqmprice4 = firelinie();
-			lccobj.nbsub.sqmprice5 = femlinie();
-			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3  + lccobj.nbsub.sqmprice4  + lccobj.nbsub.sqmprice5;
-			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
-		}
-		if(lccobj.nbsub.coats == 6){
-			lccobj.nbsub.sqmprice1 = enlinie();
-			lccobj.nbsub.sqmprice2 = tolinie();
-			lccobj.nbsub.sqmprice3 = trelinie();
-			lccobj.nbsub.sqmprice4 = firelinie();
-			lccobj.nbsub.sqmprice5 = femlinie();
-			lccobj.nbsub.sqmprice6 = sekslinie();
-			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3  + lccobj.nbsub.sqmprice4  + lccobj.nbsub.sqmprice5 + lccobj.nbsub.sqmprice6;
-			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
-		}
-
-		
-	});
-
+	//Set up input for maintenance time and refutbishment time
 	$('#nb_time_btn').click(function (){
 		var time1 = $('#nb_maint_time').val();
 		$('#nb_calc_maint_time').attr("value",time1);
 		var time2 = $('#nb_refurb_time').val();
 		$('#nb_calc_refurb_time').attr("value",time2);
-		$('#nb_spec').hide();	
-		$('#maint_calc').show();
+		$('#nb_spec').hide();
+		$('#maint_spec').show();
 	});	
 
-	//NB surface preparation function selectors
-	$('#nb_surf_prep').on('change', function() {
-
-		var surfprep = document.getElementById("nb_surf_prep").value;
-		
-		$('#surfpreptag').show(); 
-		$('#surfshow').show();
-		$('#showplease').show();
-		$('#nbsurfprep_in').show();
-		$('#nbContSurfPrep').show();
-		enable();
-
-
-		if(surfprep == "St 2"){
-			$('#surfshow').text(surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-
-		}
-		if(surfprep =="Sa 1"){
-			$('#surfshow').text(surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-		}
-		if(surfprep == "Sa 2½"){
-			$('#surfshow').text(surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-		}
-		if(surfprep =="Sa 3"){
-			$('#surfshow').text(surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-		}
-	});
-
-		//NB surface preparation function selectors
-	$('#maint_surf_prep').on('change', function() {
-
-		var maint_surfprep = document.getElementById("maint_surf_prep").value;
-
-		$('#maint_surfpreptag').show(); 
-		$('#maint_surfshow').show();
-		$('#maint_showplease').show();
-		$('#maint_surfprep_in').show();
-		$('#maintContSurfPrep').show();
-		enable();
-
-
-		if(maint_surfprep == "St 2"){
-			$('#maint_surfshow').text(maint_surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-
-		}
-		if(maint_surfprep =="Sa 1"){
-			$('#maint_surfshow').text(maint_surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-		}
-		if(maint_surfprep == "Sa 2½"){
-			$('#maint_surfshow').text(maint_surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-		}
-		if(maint_surfprep =="Sa 3"){
-			$('#maint_surfshow').text(maint_surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-		}
-	});
-
-
-
-	//NB Number of newbuilding coat function selectors
-	$('#nb_nocoats').on('change', function() {
-		lccobj.nbsub.coats = parseInt(document.getElementById("nb_nocoats").value);
-		if(lccobj.nbsub.coats ==1){
-			$('.nblines').hide();
-			$('#nbline1').show();
-		}
-		if(lccobj.nbsub.coats ==2){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-		}
-		if(lccobj.nbsub.coats ==3){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-		}
-		if(lccobj.nbsub.coats ==4){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
-		}
-		if(lccobj.nbsub.coats ==5){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
-			$('#nbline5').show();
-		}
-		if(lccobj.nbsub.coats ==6){
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
-			$('#nbline5').show();
-			$('#nbline6').show();
-		}
-	});
-
-	//NB Number of newbuilding coat function selectors
-	$('#maint_nocoats').on('change', function() {
-		lccobj.maintsub.coats = parseInt(document.getElementById("maint_nocoats").value);
-		if(lccobj.maintsub.coats ==1){
-			$('.maintlines').hide();
-			$('#maintline1').show();
-		}
-		if(lccobj.nbsub.coats ==2){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-		}
-		if(lccobj.nbsub.coats ==3){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-		}
-		if(lccobj.nbsub.coats ==4){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
-		}
-		if(lccobj.nbsub.coats ==5){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
-			$('#nbline5').show();
-		}
-		if(lccobj.nbsub.coats ==6){
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
-			$('#nbline5').show();
-			$('#nbline6').show();
-		}
-	});
-
-	function disable(abc) {
-    	document.getElementById(abc).disabled=true;
-	}
-	function enable() {
-    	document.getElementById("nb_nocoats").disabled=false;
-	}
-
+	// Calculates sqm prices and  for the selected number of lines
 	function enlinie() {
 		lccobj.nbsub.prod1 = $('#nb_product1').val();
 		lccobj.nbsub.dft1 = parseInt($('#nb_dft1').val());
