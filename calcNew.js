@@ -14,7 +14,7 @@ $(document).ready(function(){
 	        	disable("calcRefurbButton");
 	        	disable("nb_nocoats");
 	        	$('#nb_spec').show();
-	        	$('#lcccalculate').show();
+	        	$('#nb_lcccalculate').show();
 	        }
      });
 
@@ -93,7 +93,7 @@ $(document).ready(function(){
 	//Calculates squaremeter price and total
 	$('#nbContSurfPrep').click(function (){
 			calcSurfPrep = $('#nbsurfprep_in').val();
-			$('#lcccalculate').show();
+			$('#nb_lcccalculate').show();
 			$('#nbsurfprep_in').hide();
 			$('#showplease').hide();
 			$('#nbProjectCurrency').hide();

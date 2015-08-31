@@ -14,23 +14,25 @@ $(document).ready(function(){
         	disable("calcRefurbButton");
         	disable("nb_nocoats");
         	$('#maint_spec').show();
-        	$('#lcccalculate').show();
+        	$('#maint_lcccalculate').show();
         }
      });
 
 	//Show maint container
 	$('#maintContSurfPrep').click(function (){
 		maintcalcSurfPrep = $('#maint_surfprep_in').val();
-		$('#lcccalculate').show();
+		$('#maint_lcccalculate').show();
 		$('#maint_surfprep_in').hide();
 		$('#maint_showplease').hide();
 		$('#maintProjectCurrency').hide();
 		$('#maint_surfpreptag').hide();
 		$('#maint_surfshow').hide();
 		$('#projectCurrency').hide();
-		$('#maint_ContSurfPrep').hide();
+		$('#maintContSurfPrep').hide();
 		disable("maint_surf_prep");
-		S$('#maint_testcalc').show();
+		$('#maint_testcalc').show();
+		
+
      });
 
 	//Maint surface preparation function selectors
@@ -106,15 +108,26 @@ $(document).ready(function(){
 		}
 	});
 
+	//Set up input for maintenance time and refutbishment time
+	$('#maint_maint_time_btn').click(function (){
+		var time1 = $('#maint_maint_time').val();
+		$('#maint_calc_maint_time').attr("value",time1);
+		var time2 = $('#maint_refurb_time').val();
+		$('#maint_calc_refurb_time').attr("value",time2);
+		$('#maint_spec').hide();
+		$('#ref_spec').show();
+	});	
+
 	$('#maint_testcalc').click(function (){
-		if(lccobj.nbsub.coats == 1){
-			lccobj.nbsub.sqmprice1 = enlinie();
+		console.log("nu er vi i maint_testcalc");
+		if(lccobj.maintsub.coats == 1){
+			lccobj.maintsub.sqmprice1 = enlinie();
 			$('#calcNewCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
-			$('#nbline1').hide();
-			disable("nb_nocoats");
-			$('#testcalc').hide();
-			$('#nbtimes').show();
-			$('#nb_time_btn').show();
+			$('#maintline1').hide();
+			disable("maint_nocoats");
+			$('#maint_testcalc').hide();
+			$('#mainttimes').show();
+			$('#maint_time_btn').show();
 		}
 		if(lccobj.nbsub.coats == 2){
 			lccobj.nbsub.sqmprice1 = enlinie();
