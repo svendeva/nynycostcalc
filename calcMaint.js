@@ -171,6 +171,21 @@ $(document).ready(function(){
 		}
 	});
 
+	// Calculates sqm prices and  for the selected number of lines
+	function enlinie() {
+		console.log(" her er enlionie");
+		lccobj.nbsub.prod1 = $('#nb_product1').val();
+		lccobj.nbsub.dft1 = parseInt($('#nb_dft1').val());
+		lccobj.nbsub.price1 = parseFloat($('#nb_price1').val());
+		lccobj.nbsub.solids1 = parseFloat($('#nb_solids1').val());
+		lccobj.nbsub.VOC1 = parseFloat($('#nb_VOC1').val());
+		lccobj.nbsub.loss1 = parseFloat($('#nb_loss1').val());
+		lccobj.nbsub.applcost1 = parseFloat($('#nb_applcost1').val());
+		lccobj.nbsub.spgr1 = parseFloat($('#nb_spgr1').val());
+		lccobj.nbsub.sqmprice1= parseInt(calcSurfPrep) + ((lccobj.nbsub.dft1*lccobj.nbsub.price1*lccobj.nbsub.loss1)/(lccobj.nbsub.solids1*10)) + lccobj.nbsub.applcost1;
+		return lccobj.nbsub.sqmprice1;
+	}
+
 
 
 });
