@@ -259,11 +259,11 @@
                     <th  class="projectlength">Time to refurbishment (years)</th>
                     <th><input type="text" id = "refurb_calc_time" class="costinput" value=""/></th>
                   </tr>
-                  
                 </table>
           </fieldset>
-    
-         <fieldset>
+          <fieldset>
+
+
           <legend>Maintenance</legend>
             <table id="maint_calc_data">
               <tr>
@@ -314,10 +314,29 @@
                   <button id = "newCalcReturn" type="button"  class="new_return_button" style = "display:none">Return</button>
                 </tr>
               </table>
-
-
-
           </fieldset>
+          <fieldset>
+              <legend>Calculate maintenence</legend>
+                  <table id="calc_maint_data">
+                      <tr>
+                          <th class="projectlength">Mantenance cost</th>
+                          <th><input type="text" id ="maint_calc_maint_time" class="costinput" value=""/></th>
+                      </tr> 
+                      <tr>              
+                          <th  class="projectlength">Time to maintenance (years)</th>
+                          <th><input type="text" id = "maint_calc_maint_time" class="costinput" value=""/></th>
+                      </tr>
+                      <tr>              
+                          <th  class="projectlength">Time to refurbishment (years)</th>
+                          <th><input type="text" id = "maint_calc_refurb_time" class="costinput" value=""/></th>
+                      </tr>
+                      <tr>
+                         <button id = "maintCalcReturn" type="button"  class="new_return_button" style = "display:none">Return</button>
+                      </tr>
+
+                  </table>
+          </fieldset>   
+
 
         </div>
 
