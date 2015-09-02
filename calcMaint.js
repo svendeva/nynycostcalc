@@ -122,6 +122,7 @@ $(document).ready(function(){
 		console.log("nu er vi i maint_testcalc");
 		if(lccobj.maintsub.coats == 1){
 			lccobj.maintsub.sqmprice1 = enlinie();
+			console.log(lccobj.maintsub.sqmprice1);
 			$('#calcNewCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
 			$('#maintline1').hide();
 			disable("maint_nocoats");
@@ -173,17 +174,17 @@ $(document).ready(function(){
 
 	// Calculates sqm prices and  for the selected number of lines
 	function enlinie() {
-		console.log(" her er enlionie");
-		lccobj.nbsub.prod1 = $('#nb_product1').val();
-		lccobj.nbsub.dft1 = parseInt($('#nb_dft1').val());
-		lccobj.nbsub.price1 = parseFloat($('#nb_price1').val());
-		lccobj.nbsub.solids1 = parseFloat($('#nb_solids1').val());
-		lccobj.nbsub.VOC1 = parseFloat($('#nb_VOC1').val());
-		lccobj.nbsub.loss1 = parseFloat($('#nb_loss1').val());
-		lccobj.nbsub.applcost1 = parseFloat($('#nb_applcost1').val());
-		lccobj.nbsub.spgr1 = parseFloat($('#nb_spgr1').val());
-		lccobj.nbsub.sqmprice1= parseInt(calcSurfPrep) + ((lccobj.nbsub.dft1*lccobj.nbsub.price1*lccobj.nbsub.loss1)/(lccobj.nbsub.solids1*10)) + lccobj.nbsub.applcost1;
-		return lccobj.nbsub.sqmprice1;
+		console.log(" her er enlinie");
+		lccobj.maintsub.prod1 = $('#nb_product1').val();
+		lccobj.maintsub.dft1 = parseInt($('#nb_dft1').val());
+		lccobj.maintsub.price1 = parseFloat($('#nb_price1').val());
+		lccobj.maintsub.solids1 = parseFloat($('#nb_solids1').val());
+		lccobj.maintsub.VOC1 = parseFloat($('#nb_VOC1').val());
+		lccobj.maintsub.loss1 = parseFloat($('#nb_loss1').val());
+		lccobj.maintsub.applcost1 = parseFloat($('#nb_applcost1').val());
+		lccobj.maintsub.spgr1 = parseFloat($('#nb_spgr1').val());
+		lccobj.maintsub.sqmprice1= parseInt(calcSurfPrep) + ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10)) + lccobj.maintsub.applcost1;
+		return lccobj.maintsub.sqmprice1;
 	}
 
 

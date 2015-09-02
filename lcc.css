@@ -214,7 +214,7 @@ ul#opCols li h2 {
 
 #newcon{
 	position: absolute;
-	top: 40px;
+	top: 10px;
 	left: 25px;
 	background:#b3e2f7;
 	width: 500px;
@@ -232,11 +232,11 @@ ul#opCols li h2 {
 
 .specification{
 	position: absolute;
-	top: 350px;
+	top: 390px;
 	left: 25px;
 	background:#b3e2f7;
 	width: 1200px;
-	height: 250px;
+	height: 200px;
 	border: 1px solid black;
 	-webkit-border-radius:5px;
 	-moz-border-radius:5px;
