@@ -175,14 +175,14 @@ $(document).ready(function(){
 	// Calculates sqm prices and  for the selected number of lines
 	function enlinie() {
 		console.log(" her er enlinie");
-		lccobj.maintsub.prod1 = $('#nb_product1').val();
-		lccobj.maintsub.dft1 = parseInt($('#nb_dft1').val());
-		lccobj.maintsub.price1 = parseFloat($('#nb_price1').val());
-		lccobj.maintsub.solids1 = parseFloat($('#nb_solids1').val());
-		lccobj.maintsub.VOC1 = parseFloat($('#nb_VOC1').val());
-		lccobj.maintsub.loss1 = parseFloat($('#nb_loss1').val());
-		lccobj.maintsub.applcost1 = parseFloat($('#nb_applcost1').val());
-		lccobj.maintsub.spgr1 = parseFloat($('#nb_spgr1').val());
+		lccobj.maintsub.prod1 = $('#maint_product1').val();
+		lccobj.maintsub.dft1 = parseInt($('#maint_dft1').val());
+		lccobj.maintsub.price1 = parseFloat($('#maint_price1').val());
+		lccobj.maintsub.solids1 = parseFloat($('#maint_solids1').val());
+		lccobj.maintsub.VOC1 = parseFloat($('#maint_VOC1').val());
+		lccobj.maintsub.loss1 = parseFloat($('#maint_loss1').val());
+		lccobj.maintsub.applcost1 = parseFloat($('#maint_applcost1').val());
+		lccobj.maintsub.spgr1 = parseFloat($('#maint_spgr1').val());
 		lccobj.maintsub.sqmprice1= parseInt(calcSurfPrep) + ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10)) + lccobj.maintsub.applcost1;
 		return lccobj.maintsub.sqmprice1;
 	}
