@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	var blast = 0;
+
 	//Show nb container
 	$('#maint_calculate').click(function (){
     	if(document.getElementById('calculate').checked) {
@@ -122,7 +124,7 @@ $(document).ready(function(){
 		console.log("nu er vi i maint_testcalc");
 		if(lccobj.maintsub.coats == 1){
 			lccobj.maintsub.sqmprice1 = enlinie();
-			console.log(lccobj.maintsub.sqmprice1);
+			console.log("maintenance cost is : " + lccobj.maintsub.sqmprice1);
 			$('#calcNewCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
 			$('#maintline1').hide();
 			disable("maint_nocoats");
@@ -174,7 +176,6 @@ $(document).ready(function(){
 
 	// Calculates sqm prices and  for the selected number of lines
 	function enlinie() {
-		console.log(" her er enlinie");
 		lccobj.maintsub.prod1 = $('#maint_product1').val();
 		lccobj.maintsub.dft1 = parseInt($('#maint_dft1').val());
 		lccobj.maintsub.price1 = parseFloat($('#maint_price1').val());
@@ -183,6 +184,47 @@ $(document).ready(function(){
 		lccobj.maintsub.loss1 = parseFloat($('#maint_loss1').val());
 		lccobj.maintsub.applcost1 = parseFloat($('#maint_applcost1').val());
 		lccobj.maintsub.spgr1 = parseFloat($('#maint_spgr1').val());
+		lccobj.maintsub.area = parseFloat($('#maint_per').val());
+		lccobj.maintsub.surfprepcost = parseFloat($('#maint_surfprep_in').val());
+
+		console.log("Surfprep per sqm er : " + lccobj.maintsub.surfprepcost);
+
+		if($('#mainttucheck1').attr('checked')) {
+			lccobj.maintsub.tf1 = 0;
+
+			lccobj.maintsub.blastcost  = (structurearea*(lccobj.maintsub.area/100)*1.1)*lccobj.maintsub.surfprepcost;
+
+			
+			lccobj.maintsub.pricearea1 = ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10))*structurearea* (lccobj.maintsub.area/100)*1.1;
+			console.log("maint price per sqm :" + lccobj.maintsub.pricearea1);
+			
+			lccobj.maintsub.area1 = structurearea*(lccobj.maintsub.area/100)*1.1;
+			console.log("maint sub area1" + lccobj.maintsub.area1);
+		}
+
+
+
+
+
+
+
+		if($('#maintfccheck1').attr('checked')) {
+			lccobj.maintsub.tf1 = 1;
+				
+			lccobj.maintsub.pricearea1 = ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10))*lccobj.area;
+			
+			lccobj.maintsub.area1 = lccobj.area;
+		}
+
+		lccobj.maintsub.price = lccobj.maintsub.area1*88 + lccobj.maintsub.pricearea1*lccobj.maintsub.area1+lccobj.maintsub.area1*4;
+
+
+
+
+
+
+
+
 		lccobj.maintsub.sqmprice1= parseInt(calcSurfPrep) + ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10)) + lccobj.maintsub.applcost1;
 		return lccobj.maintsub.sqmprice1;
 	}

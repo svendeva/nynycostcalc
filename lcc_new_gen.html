@@ -25,6 +25,8 @@
       lccobj.maintsub = {};
       lccobj.refsub = {};
 
+  
+
       //disables and enables buttons
     function disable(abc) {
         document.getElementById(abc).disabled=true;
@@ -480,6 +482,8 @@
 
               <button id ="maint_calcMaintButton" type "button">Maintenance</button>
               <button id ="maint_calcRefurbButton" type "button">Refurbishment</button>
+              
+              <span> Estimated area for surface prep. (%)</span> &nbsp <input type="text" id="maint_per" class="dft"/>
               <br>
               <span id = "maint_surfpreptag" style="display:none">Surface preparation is</span>
                &nbsp 
@@ -487,6 +491,7 @@
                <span id = "maint_showplease" style="display:none">Please input the surface preparation cost in </span>&nbsp <span id="maintProjectCurrency" class = "projectCurrency"style="display:none">
               </span>&nbsp <input type="text" id="maint_surfprep_in" style="display:none"/>
                <span><button id ="maintContSurfPrep"style="display:none">Continue abc</button></span>
+
 
               <div id = "maintline1" style="display:none" class="nblines">
                 <span>Product 1</span> &nbsp <input type="text" id="maint_product1"/>
@@ -559,7 +564,7 @@
               </div>
               -->
               <div id = "mainttimes" style="display:none">
-                <span> Estimated area for surface prep. (%)</span> &nbsp <input type="text" id="maint_refurb_time" class="dft"/>
+                
               </div>
               <div><button id = "maint_time_btn" style="display:none">Times continue</button></div>
 
