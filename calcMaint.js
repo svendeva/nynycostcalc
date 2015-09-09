@@ -124,7 +124,6 @@ $(document).ready(function(){
 		console.log("nu er vi i maint_testcalc");
 		if(lccobj.maintsub.coats == 1){
 			lccobj.maintsub.sqmprice1 = enlinie();
-			console.log("maintenance cost is : " + lccobj.maintsub.sqmprice1);
 			$('#calcNewCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
 			$('#maintline1').hide();
 			disable("maint_nocoats");
@@ -193,13 +192,29 @@ $(document).ready(function(){
 			lccobj.maintsub.tf1 = 0;
 
 			lccobj.maintsub.blastcost  = (structurearea*(lccobj.maintsub.area/100)*1.1)*lccobj.maintsub.surfprepcost;
+			console.log("Blastcost er : " + lccobj.maintsub.blastcost)
+			lccobj.maintsub.applcost1 = lccobj.maintsub.applcost1*(structurearea*(lccobj.maintsub.area/100)*1.2);
+			console.log("Application cost er . " + lccobj.maintsub.applcost1);
+
+			lccobj.maintsub.pricearea1 = ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10))*(structurearea* (lccobj.maintsub.area/100)*1.2);
+			console.log("Paint price er : " + lccobj.maintsub.pricearea1);
+
+			lccobj.maintsub.totcost = (lccobj.maintsub.blastcost + lccobj.maintsub.applcost1 + lccobj.maintsub.pricearea1).toFixed(0);
+
+			console.log("maint total cost er : " + lccobj.maintsub.totcost);
+
+			//$('#calcMaintCost').attr("Value", 2222222);
+
+			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost);
+			
+
 
 			
-			lccobj.maintsub.pricearea1 = ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10))*structurearea* (lccobj.maintsub.area/100)*1.1;
-			console.log("maint price per sqm :" + lccobj.maintsub.pricearea1);
 			
-			lccobj.maintsub.area1 = structurearea*(lccobj.maintsub.area/100)*1.1;
-			console.log("maint sub area1" + lccobj.maintsub.area1);
+
+		
+
+
 		}
 
 
