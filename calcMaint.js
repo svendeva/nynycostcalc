@@ -73,10 +73,10 @@ $(document).ready(function(){
 			$('.maintlines').hide();
 			$('#maintline1').show();
 		}
-		if(lccobj.nbsub.coats ==2){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
+		if(lccobj.maintsub.coats ==2){
+			$('.maintlines').hide();
+			$('#maintline1').show();
+			$('#maintline2').show();
 		}
 		if(lccobj.nbsub.coats ==3){
 			$('.nblines').hide();
@@ -117,7 +117,9 @@ $(document).ready(function(){
 			disable("maint_nocoats");
 			$('#maint_spec').hide();
 		}
-		if(lccobj.nbsub.coats == 2){
+		if(lccobj.maintsub.coats == 2){
+			console.log("nu er vi i 2 coats");
+
 			lccobj.nbsub.sqmprice1 = enlinie();
 			lccobj.nbsub.sqmprice2 = tolinie();
 			$('#maintline1').hide();
@@ -207,5 +209,17 @@ $(document).ready(function(){
 			// puts the total maintenance cost up
 			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost);
 		}
+	}
+
+	function tolinie() {
+		lccobj.maintsub.prod2 = $('#maint_product2').val();
+		lccobj.maintsub.dft2 = parseInt($('#maint_dft2').val());
+		lccobj.maintsub.price2 = parseFloat($('#maint_price2').val());
+		lccobj.maintsub.solids2 = parseFloat($('#maint_solids2').val());
+		lccobj.maintsub.VOC2 = parseFloat($('#maint_VOC2').val());
+		lccobj.maintsub.loss2 = parseFloat($('#maint_loss2').val());
+		lccobj.maintsub.applcost2 = parseFloat($('#maint_applcost2').val());
+		lccobj.maintsub.area = parseFloat($('#maint_per').val());
+		lccobj.maintsub.surfprepcost = parseFloat($('#maint_surfprep_in').val());
 	}
 });
