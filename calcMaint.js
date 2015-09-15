@@ -49,27 +49,26 @@ $(document).ready(function(){
 
 		if(maint_surfprep == "St 2"){
 			$('#maint_surfshow').text(maint_surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
+			$('#maintProjectCurrency').show();
 		}
 		if(maint_surfprep =="Sa 1"){
 			$('#maint_surfshow').text(maint_surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
+			$('#maintProjectCurrency').show();
 		}
 		if(maint_surfprep == "Sa 2½"){
 			$('#maint_surfshow').text(maint_surfprep);
-
-			//$('#maintProjectCurrency').text(currency + " " + "per SQM");
 			$('#maintProjectCurrency').show();
 		}
 		if(maint_surfprep =="Sa 3"){
 			$('#maint_surfshow').text(maint_surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
+			$('#maintProjectCurrency').show();
 		}
 	});
 
 	//NB Number of maintenance coat function selectors
 	$('#maint_nocoats').on('change', function() {
 		lccobj.maintsub.coats = parseInt(document.getElementById("maint_nocoats").value);
+
 		if(lccobj.maintsub.coats ==1){
 			$('.maintlines').hide();
 			$('#maintline1').show();
@@ -110,33 +109,25 @@ $(document).ready(function(){
 		}
 	});
 
-	//Set up input for maintenance time and refutbishment time
-	/*$('#maint_maint_time_btn').click(function (){
-		var time1 = $('#maint_maint_time').val();
-		$('#maint_calc_maint_time').attr("value",time1);
-		var time2 = $('#maint_refurb_time').val();
-		$('#maint_calc_refurb_time').attr("value",time2);
-		$('#maint_spec').hide();
-		$('#ref_spec').show();
-	});	*/
-
 	$('#maint_testcalc').click(function (){
 		console.log("nu er vi i maint_testcalc");
-
 		if(lccobj.maintsub.coats == 1){
 			lccobj.maintsub.sqmprice1 = enlinie();
-			console.log("Før maintline1 hide");
 			$('#maintline1').hide();
 			disable("maint_nocoats");
-			//$('#maint_testcalc').show();
 			$('#maint_spec').hide();
-
 		}
 		if(lccobj.nbsub.coats == 2){
 			lccobj.nbsub.sqmprice1 = enlinie();
 			lccobj.nbsub.sqmprice2 = tolinie();
-			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2;
-			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
+			$('#maintline1').hide();
+			$('#maintline2').hide();
+			disable("maint_nocoats");
+			$('#maint_spec').hide();
+
+
+			//lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2;
+			//$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
 		}
 		if(lccobj.nbsub.coats == 3){
 			lccobj.nbsub.sqmprice1 = enlinie();
@@ -187,7 +178,8 @@ $(document).ready(function(){
 		lccobj.maintsub.area = parseFloat($('#maint_per').val());
 		lccobj.maintsub.surfprepcost = parseFloat($('#maint_surfprep_in').val());
 
-		if($('#mainttucheck1').attr('checked')) {
+		// Touch up alternativ
+		if($('#mainttucheck1').is(":checked")) {
 			lccobj.maintsub.tf1 = 0;
 			//calculates maintenance blasting cost
 			lccobj.maintsub.blastcost  = (structurearea*(lccobj.maintsub.area/100)*1.1)*lccobj.maintsub.surfprepcost;
@@ -201,41 +193,19 @@ $(document).ready(function(){
 			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost);
 		}
 
-		if($('#maintfccheck1').attr('checked')) {
+		//Full coat alternativ
+		if($('#maintfccheck1').is(":checked")) {
 			lccobj.maintsub.tf1 = 1;
 			//calculates maintenance blasting cost
-			lccobj.maintsub.blastcost  = (structurearea*(lccobj.maintsub.area/100)*1.1)*lccobj.maintsub.surfprepcost;
+			lccobj.maintsub.blastcost  = structurearea*lccobj.maintsub.surfprepcost;
 			//calculates maintenance application cost
-			lccobj.maintsub.applcost1 = lccobj.maintsub.applcost1*(structurearea*(lccobj.maintsub.area/100)*1.2);
+			lccobj.maintsub.applcost1 = lccobj.maintsub.applcost1*structurearea;
 			// calculates maintenance paintcost
-			lccobj.maintsub.pricearea1 = ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10))*(structurearea* (lccobj.maintsub.area/100)*1.2);
+			lccobj.maintsub.pricearea1 = ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10))*structurearea;
 			//calculates maintenance total cost
 			lccobj.maintsub.totcost = (lccobj.maintsub.blastcost + lccobj.maintsub.applcost1 + lccobj.maintsub.pricearea1).toFixed(0);
 			// puts the total maintenance cost up
 			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost);
-
-
-
-
-				
-			lccobj.maintsub.pricearea1 = ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10))*structurearea;
-			
-			lccobj.maintsub.area1 = lccobj.area;
 		}
-
-	
-
-
-
-
-
-
-
-
-		lccobj.maintsub.sqmprice1= parseInt(calcSurfPrep) + ((lccobj.maintsub.dft1*lccobj.maintsub.price1*lccobj.maintsub.loss1)/(lccobj.maintsub.solids1*10)) + lccobj.maintsub.applcost1;
-		return lccobj.maintsub.sqmprice1;
 	}
-
-
-
 });
