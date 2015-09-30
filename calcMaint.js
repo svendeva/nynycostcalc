@@ -84,12 +84,12 @@ $(document).ready(function(){
 			$('#maintline2').show();
 			$('#maintline3').show();
 		}
-		if(lccobj.nbsub.coats ==4){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
+		if(lccobj.maintsub.coats ==4){
+			$('.maintlines').hide();
+			$('#maintline1').show();
+			$('#maintline2').show();
+			$('#maintline3').show();
+			$('#maintline4').show();
 		}
 		if(lccobj.nbsub.coats ==5){
 			$('.nblines').hide();
@@ -129,7 +129,6 @@ $(document).ready(function(){
 			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost);
 		}
 		if(lccobj.maintsub.coats == 3){
-			console.log("Nu er vi i 3");
 			enlinie();
 			tolinie();
 			trelinie();
@@ -139,17 +138,18 @@ $(document).ready(function(){
 			disable("maint_nocoats");
 			$('#maint_spec').hide();
 			lccobj.maintsub.totcost = Number(lccobj.maintsub.totcost1)+Number(lccobj.maintsub.totcost2) + Number(lccobj.maintsub.totcost3);
-
-			//lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3;
 			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost);
 		}
-		if(lccobj.nbsub.coats == 4){
-			lccobj.nbsub.sqmprice1 = enlinie();
-			lccobj.nbsub.sqmprice2 = tolinie();
-			lccobj.nbsub.sqmprice3 = trelinie();
-			lccobj.nbsub.sqmprice4 = firelinie();
-			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2 + lccobj.nbsub.sqmprice3  + lccobj.nbsub.sqmprice4;
-			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
+		if(lccobj.maintsub.coats == 4){
+			console.log("Nu er vi i fire");
+			enlinie();
+			tolinie();
+			trelinie();
+			firelinie();
+			disable("maint_nocoats");
+			$('#maint_spec').hide();
+			lccobj.maintsub.totcost = Number(lccobj.maintsub.totcost1)+Number(lccobj.maintsub.totcost2) + Number(lccobj.maintsub.totcost3) + Number(lccobj.maintsub.totcost4);
+			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost);
 		}
 		if(lccobj.nbsub.coats == 5){
 			lccobj.nbsub.sqmprice1 = enlinie();
@@ -281,6 +281,40 @@ $(document).ready(function(){
 			lccobj.maintsub.pricearea3 = ((lccobj.maintsub.dft3*lccobj.maintsub.price3*lccobj.maintsub.loss3)/(lccobj.maintsub.solids3*10))*structurearea;
 			//calculates maintenance total cost
 			lccobj.maintsub.totcost3 = (lccobj.maintsub.applcost3 + lccobj.maintsub.pricearea3).toFixed(0);
+		}
+	}
+
+	function firelinie() {
+		lccobj.maintsub.prod4 = $('#maint_product4').val();
+		lccobj.maintsub.dft4 = parseInt($('#maint_dft4').val());
+		lccobj.maintsub.price4 = parseFloat($('#maint_price4').val());
+		lccobj.maintsub.solids4 = parseFloat($('#maint_solids4').val());
+		lccobj.maintsub.VOC4 = parseFloat($('#maint_VOC4').val());
+		lccobj.maintsub.loss4 = parseFloat($('#maint_loss4').val());
+		lccobj.maintsub.applcost4 = parseFloat($('#maint_applcost4').val());
+		lccobj.maintsub.area = parseFloat($('#maint_per').val());
+		lccobj.maintsub.surfprepcost = parseFloat($('#maint_surfprep_in').val());
+
+
+		// Touch up alternativ
+		if($('#mainttucheck4').is(":checked")) {
+			lccobj.maintsub.tf4 = 0;
+			//calculates maintenance application cost
+			lccobj.maintsub.applcost4 = lccobj.maintsub.applcost4*(structurearea*(lccobj.maintsub.area/100)*1.4);
+			// calculates maintenance paintcost
+			lccobj.maintsub.pricearea4 = ((lccobj.maintsub.dft4*lccobj.maintsub.price4*lccobj.maintsub.loss4)/(lccobj.maintsub.solids4*10))*(structurearea* (lccobj.maintsub.area/100)*1.4);
+			//calculates maintenance total cost
+			lccobj.maintsub.totcost4 = (lccobj.maintsub.applcost4 + lccobj.maintsub.pricearea4).toFixed(0);
+		}
+		//Full coat alternativ
+		if($('#maintfccheck4').is(":checked")) {
+			lccobj.maintsub.tf4 = 1;
+			//calculates maintenance application cost
+			lccobj.maintsub.applcost4 = lccobj.maintsub.applcost4*structurearea;
+			// calculates maintenance paintcost
+			lccobj.maintsub.pricearea4 = ((lccobj.maintsub.dft4*lccobj.maintsub.price4*lccobj.maintsub.loss4)/(lccobj.maintsub.solids4*10))*structurearea;
+			//calculates maintenance total cost
+			lccobj.maintsub.totcost4 = (lccobj.maintsub.applcost4 + lccobj.maintsub.pricearea4).toFixed(0);
 		}
 	}
 });
