@@ -295,7 +295,6 @@ $(document).ready(function(){
 		lccobj.maintsub.area = parseFloat($('#maint_per').val());
 		lccobj.maintsub.surfprepcost = parseFloat($('#maint_surfprep_in').val());
 
-
 		// Touch up alternativ
 		if($('#mainttucheck4').is(":checked")) {
 			lccobj.maintsub.tf4 = 0;
