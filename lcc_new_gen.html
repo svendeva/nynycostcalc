@@ -324,22 +324,12 @@
                           <th class="projectlength">Mantenance cost</th>
                           <th><input type="text" id ="calcMaintCost" class="costinput" value=""/></th>
                       </tr> 
-                      <!--<tr>              
-                          <th  class="projectlength">Time to maintenance (years)</th>
-                          <th><input type="text" id = "maint_calc_maint_time" class="costinput" value=""/></th>
-                      </tr>
-                      <tr>              
-                          <th  class="projectlength">Time to refurbishment (years)</th>
-                          <th><input type="text" id = "maint_calc_refurb_time" class="costinput" value=""/></th>
-                      </tr>-->
                       <tr>
                          <button id = "maintCalcReturn" type="button"  class="new_return_button" style = "display:none">Return</button>
                       </tr>
 
                   </table>
           </fieldset>   
-
-
         </div>
 
 
@@ -536,18 +526,19 @@
                 <span id = "tucheck4"><input type = "radio" id ="mainttucheck4" name = "mainttc4" value = "Touch up" checked/> Touch up
                 <span id = "fccheck4"><input type = "radio" id ="maintfccheck4" name = "mainttc4" value = "Full coat"/> Full coat
               </div>
-
-<!--               
-              <div id = "nbline5" style="display:none" class="nblines">
-                <span>Product 5</span> &nbsp <input type="text" id="nb_product5"/>
-                <span>Dft 5</span> &nbsp <input type="text" id="nb_dft5" class="dft"/>
-                <span>Price 5</span> &nbsp <input type="text" id="nb_price5" class="dft"/>
-                <span>Solids 5</span> &nbsp <input type="text" id="nb_solids5" class="dft"/>
-                <span>VOC 5</span> &nbsp <input type="text" id="nb_VOC5" class="dft"/>
-                <span>Loss 5</span> &nbsp <input type="text" id="nb_loss5" class="dft"/>
-                <span>Appl cost 5</span> &nbsp <input type="text" id="nb_applcost5" class="dft"/>
-                <span>Sp. gr. 5</span> &nbsp <input type="text" id="nb_spgr5" class="dft"/>
+              <div id = "maintline5" style="display:none" class="maintlines">
+                <span>Product 5</span> &nbsp <input type="text" id="maint_product5"/>
+                <span>Dft 5</span> &nbsp <input type="text" id="maint_dft5" class="dft"/>
+                <span>Price 5</span> &nbsp <input type="text" id="maint_price5" class="dft"/>
+                <span>Solids 5</span> &nbsp <input type="text" id="maint_solids5" class="dft"/>
+                <span>VOC 5</span> &nbsp <input type="text" id="maint_VOC5" class="dft"/>
+                <span>Loss 5</span> &nbsp <input type="text" id="maint_loss5" class="dft"/>
+                <span>Appl cost 5</span> &nbsp <input type="text" id="maint_applcost5" class="dft"/>
+                <span id = "tucheck5"><input type = "radio" id ="mainttucheck5" name = "mainttc5" value = "Touch up" checked/> Touch up
+                <span id = "fccheck5"><input type = "radio" id ="maintfccheck5" name = "mainttc5" value = "Full coat"/> Full coat
               </div>
+
+<!--              
               <div id = "nbline6" style="display:none" class="nblines">
                 <span>Product 6</span> &nbsp <input type="text" id="nb_product6"/>
                 <span>Dft 6</span> &nbsp <input type="text" id="nb_dft6" class="dft"/>
