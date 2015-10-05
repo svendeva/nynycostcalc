@@ -26,7 +26,7 @@ $(document).ready(function(){
 		$('#showplease').show();
 		$('#nbsurfprep_in').show();
 		$('#nbContSurfPrep').show();
-		enable();
+		enable("nb_nocoats");
 
 		if(surfprep == "St 2"){
 			$('#surfshow').text(surfprep);

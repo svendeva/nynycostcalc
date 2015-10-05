@@ -31,8 +31,8 @@
     function disable(abc) {
         document.getElementById(abc).disabled=true;
     }
-    function enable() {
-        document.getElementById("nb_nocoats").disabled=false;
+    function enable(abc) {
+        document.getElementById(abc).disabled=false;
     }
     </script>
 
@@ -537,19 +537,18 @@
                 <span id = "tucheck5"><input type = "radio" id ="mainttucheck5" name = "mainttc5" value = "Touch up" checked/> Touch up
                 <span id = "fccheck5"><input type = "radio" id ="maintfccheck5" name = "mainttc5" value = "Full coat"/> Full coat
               </div>
+              <div id = "maintline6" style="display:none" class="maintlines">
+                <span>Product 6</span> &nbsp <input type="text" id="maint_product6"/>
+                <span>Dft 6</span> &nbsp <input type="text" id="maint_dft6" class="dft"/>
+                <span>Price 6</span> &nbsp <input type="text" id="maint_price6" class="dft"/>
+                <span>Solids 6</span> &nbsp <input type="text" id="maint_solids6" class="dft"/>
+                <span>VOC 6</span> &nbsp <input type="text" id="maint_VOC6" class="dft"/>
+                <span>Loss 6</span> &nbsp <input type="text" id="maint_loss6" class="dft"/>
+                <span>Appl cost 6</span> &nbsp <input type="text" id="maint_applcost6" class="dft"/>
+                <span id = "tucheck6"><input type = "radio" id ="mainttucheck6" name = "mainttc6" value = "Touch up" checked/> Touch up
+                <span id = "fccheck6"><input type = "radio" id ="maintfccheck6" name = "mainttc6" value = "Full coat"/> Full coat
 
-<!--              
-              <div id = "nbline6" style="display:none" class="nblines">
-                <span>Product 6</span> &nbsp <input type="text" id="nb_product6"/>
-                <span>Dft 6</span> &nbsp <input type="text" id="nb_dft6" class="dft"/>
-                <span>Price 6</span> &nbsp <input type="text" id="nb_price6" class="dft"/>
-                <span>Solids 6</span> &nbsp <input type="text" id="nb_solids6" class="dft"/>
-                <span>VOC 6</span> &nbsp <input type="text" id="nb_VOC6" class="dft"/>
-                <span>Loss 6</span> &nbsp <input type="text" id="nb_loss6" class="dft"/>
-                <span>Appl cost 6</span> &nbsp <input type="text" id="nb_applcost6" class="dft"/>
-                <span>Sp. gr. 6</span> &nbsp <input type="text" id="nb_spgr6" class="dft"/>
               </div>
-              -->
               <div id = "mainttimes" style="display:none"></div>
 
               <div><button id = "maint_testcalc" style="display:none">Continue to ref</button></div>
