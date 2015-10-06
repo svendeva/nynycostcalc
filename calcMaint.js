@@ -12,8 +12,8 @@ $(document).ready(function(){
         	$('#ref_con_data').hide();
         	$('#lcccon').hide();
         	$('#simulate').hide();
-        	disable("calcMaintButton");
-        	disable("calcRefurbButton");
+        	//disable("calcMaintButton");
+        	//&disable("calcRefurbButton");
         	disable("nb_nocoats");
         	$('#maint_spec').show();
         	$('#maint_lcccalculate').show();

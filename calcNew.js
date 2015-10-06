@@ -10,9 +10,10 @@ $(document).ready(function(){
 	        	$('#ref_con_data').hide();
 	        	$('#lcccon').hide();
 	        	$('#simulate').hide();
-	        	disable("calcMaintButton");
-	        	disable("calcRefurbButton");
-	        	disable("nb_nocoats");
+	        	//disable("calcMaintButton");
+	        	//disable("calcRefurbButton");
+	        	$('#nb_nocoats').hide();
+	        	//disable("nb_nocoats");
 	        	$('#nb_spec').show();
 	        	$('#nb_lcccalculate').show();
 	        }
@@ -26,7 +27,8 @@ $(document).ready(function(){
 		$('#showplease').show();
 		$('#nbsurfprep_in').show();
 		$('#nbContSurfPrep').show();
-		enable("nb_nocoats");
+		
+		//enable("nb_nocoats");
 
 		if(surfprep == "St 2"){
 			$('#surfshow').text(surfprep);
@@ -88,6 +90,7 @@ $(document).ready(function(){
 			$('#nbline5').show();
 			$('#nbline6').show();
 		}
+		$('#testcalc').show();
 	});
 
 	//Calculates squaremeter price and total
@@ -102,7 +105,8 @@ $(document).ready(function(){
 			$('#projectCurrency').hide();
 			$('#nbContSurfPrep').hide();
 			disable("nb_surf_prep");
-			$('#testcalc').show();
+			
+			$('#nb_nocoats').show();
      });
 
 	//Calculates squaremeter price and total for the number of layers
@@ -115,6 +119,7 @@ $(document).ready(function(){
 			$('#testcalc').hide();
 			$('#nbtimes').show();
 			$('#nb_time_btn').show();
+
 		}
 		if(lccobj.nbsub.coats == 2){
 			lccobj.nbsub.sqmprice1 = enlinie();
