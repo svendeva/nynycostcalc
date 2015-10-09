@@ -172,6 +172,8 @@ $(document).ready(function(){
 			lccobj.maintsub.totcost = Number(lccobj.maintsub.totcost1)+Number(lccobj.maintsub.totcost2) + Number(lccobj.maintsub.totcost3) + Number(lccobj.maintsub.totcost4) + Number(lccobj.maintsub.totcost5) + Number(lccobj.maintsub.totcost6);
 			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost);
 		}
+
+		$('#ref_spec').show();
 	});
 
 	// Calculates sqm prices and  for the selected number of lines

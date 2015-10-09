@@ -430,12 +430,13 @@
                 <span>Appl cost 6</span> &nbsp <input type="text" id="nb_applcost6" class="dft"/>
               </div>
               <div id = "nbtimes" style="display:none">
+                <br>
                 <span>  Time to maintenance (years)</span> &nbsp<span> <input type="text" id="nb_maint_time" class="dft"/><br>
                 <span>  Time to refurbishment (years)</span> &nbsp <input type="text" id="nb_refurb_time" class="dft"/>
-              </div>
+              </div><br>
               <div><button id = "nb_time_btn" style="display:none">Times continue</button></div>
-
-              <div><button id = "testcalc" style="display:none">Continue to maint</button></div>
+              <br>
+              <div><button id = "testcalc" style="display:none">Continue</button></div>
             </fieldset>
     </div>
 
@@ -550,8 +551,108 @@
 
               </div>
               <div id = "mainttimes" style="display:none"></div>
-
+                <br>
               <div><button id = "maint_testcalc" style="display:none">Continue to ref</button></div>
+            </fieldset>
+    </div>
+
+        <div id="ref_spec" class= "specification" style="display:none">
+      <fieldset>
+              <legend> Refurbishment - Calculate cost input</legend>
+              <!--<button id ="calcNewButton" type "button">New construction</button>-->
+
+              <!--Select surface preparation-->
+              <select id="ref_surf_prep">
+                <option value="Choose">Choose surface prep</option>
+                <option value="St 2">St 2</option>
+                <option value="Sa 1">Sa 1</option>
+                <option value="Sa 2&frac12;">Sa 2&frac12</option>
+                <option value="Sa 3">Sa 3</option>
+              </select>
+              <!-- Select Number of coats-->
+              <select class = "dropdown" id="ref_nocoats">
+                <option class = "dropdown" value="0">Choose number of coats</option>
+                <option class = "dropdown" value="1">1</option>
+                <option class = "dropdown" value="2">2</option>
+                <option class = "dropdown" value="3">3</option>
+                <option class = "dropdown" value="4">4</option>
+                <option class = "dropdown" value="5">5</option>
+                <option class = "dropdown" value="6">6</option>
+              </select>
+
+              <!--<button id ="calcMaintButton" type "button">Maintenance</button>
+              <button id ="calcRefurbButton" type "button">Refurbishment</button>-->
+              <br>
+              <span id = "surfpreptag" style="display:none">Surface preparation is</span>
+               &nbsp 
+               <span id = "surfshow" class="surfshow"> </span>&nbsp
+               <span id = "showplease" style="display:none">Please input the surface preparation cost in </span>&nbsp <span id = "nbProjectCurrency" class = "projectCurrency">
+             </span>&nbsp <input type="text" id="nbsurfprep_in" style="display:none"/>
+               <span><button id ="nbContSurfPrep"style="display:none">NB Continue</button></span>
+
+              <div id = "nbline1" style="display:none" class="nblines">
+                <span>Product 1</span> &nbsp <input type="text" id="nb_product1"/>
+                <span>Dft 1</span> &nbsp <input type="text" id="nb_dft1" class="dft"/>
+                <span>Price 1</span> &nbsp <input type="text" id="nb_price1" class="dft"/>
+                <span>Solids 1</span> &nbsp <input type="text" id="nb_solids1" class="dft"/>
+                <span>VOC 1</span> &nbsp <input type="text" id="nb_VOC1" class="dft"/>
+                <span>Loss 1</span> &nbsp <input type="text" id="nb_loss1" class="dft"/>
+                <span>Appl cost 1</span> &nbsp <input type="text" id="nb_applcost1" class="dft"/>
+              </div>
+
+              <!--<div id = "nbline2" style="display:none" class="nblines">
+                <span>Product 2</span> &nbsp <input type="text" id="nb_product2"/>
+                <span>Dft 2</span> &nbsp <input type="text" id="nb_dft2" class="dft"/>
+                <span>Price 2</span> &nbsp <input type="text" id="nb_price2" class="dft"/>
+                <span>Solids 2</span> &nbsp <input type="text" id="nb_solids2" class="dft"/>
+                <span>VOC 2</span> &nbsp <input type="text" id="nb_VOC2" class="dft"/>
+                <span>Loss 2</span> &nbsp <input type="text" id="nb_loss2" class="dft"/>
+                <span>Appl cost 2</span> &nbsp <input type="text" id="nb_applcost2" class="dft"/>
+              </div>
+              <div id = "nbline3" style="display:none" class="nblines">
+                <span>Product 3</span> &nbsp <input type="text" id="nb_product3"/>
+                <span>Dft 3</span> &nbsp <input type="text" id="nb_dft3" class="dft"/>
+                <span>Price 3</span> &nbsp <input type="text" id="nb_price3" class="dft"/>
+                <span>Solids 3</span> &nbsp <input type="text" id="nb_solids3" class="dft"/>
+                <span>VOC 3</span> &nbsp <input type="text" id="nb_VOC3" class="dft"/>
+                <span>Loss 3</span> &nbsp <input type="text" id="nb_loss3" class="dft"/>
+                <span>Appl cost 3</span> &nbsp <input type="text" id="nb_applcost3" class="dft"/>
+              </div>
+              <div id = "nbline4" style="display:none" class="nblines">
+                <span>Product 4</span> &nbsp <input type="text" id="nb_product4"/>
+                <span>Dft 4</span> &nbsp <input type="text" id="nb_dft4" class="dft"/>
+                <span>Price 4</span> &nbsp <input type="text" id="nb_price4" class="dft"/>
+                <span>Solids 4</span> &nbsp <input type="text" id="nb_solids4" class="dft"/>
+                <span>VOC 4</span> &nbsp <input type="text" id="nb_VOC4" class="dft"/>
+                <span>Loss 4</span> &nbsp <input type="text" id="nb_loss4" class="dft"/>
+                <span>Appl cost 4</span> &nbsp <input type="text" id="nb_applcost4" class="dft"/>
+              </div>
+              <div id = "nbline5" style="display:none" class="nblines">
+                <span>Product 5</span> &nbsp <input type="text" id="nb_product5"/>
+                <span>Dft 5</span> &nbsp <input type="text" id="nb_dft5" class="dft"/>
+                <span>Price 5</span> &nbsp <input type="text" id="nb_price5" class="dft"/>
+                <span>Solids 5</span> &nbsp <input type="text" id="nb_solids5" class="dft"/>
+                <span>VOC 5</span> &nbsp <input type="text" id="nb_VOC5" class="dft"/>
+                <span>Loss 5</span> &nbsp <input type="text" id="nb_loss5" class="dft"/>
+                <span>Appl cost 5</span> &nbsp <input type="text" id="nb_applcost5" class="dft"/>
+              </div>
+              <div id = "nbline6" style="display:none" class="nblines">
+                <span>Product 6</span> &nbsp <input type="text" id="nb_product6"/>
+                <span>Dft 6</span> &nbsp <input type="text" id="nb_dft6" class="dft"/>
+                <span>Price 6</span> &nbsp <input type="text" id="nb_price6" class="dft"/>
+                <span>Solids 6</span> &nbsp <input type="text" id="nb_solids6" class="dft"/>
+                <span>VOC 6</span> &nbsp <input type="text" id="nb_VOC6" class="dft"/>
+                <span>Loss 6</span> &nbsp <input type="text" id="nb_loss6" class="dft"/>
+                <span>Appl cost 6</span> &nbsp <input type="text" id="nb_applcost6" class="dft"/>
+              </div>
+              <div id = "nbtimes" style="display:none"> -->
+                <br>
+                <span>  Time to maintenance (years)</span> &nbsp<span> <input type="text" id="nb_maint_time" class="dft"/><br>
+                <span>  Time to refurbishment (years)</span> &nbsp <input type="text" id="nb_refurb_time" class="dft"/>
+              </div><br>
+              <div><button id = "nb_time_btn" style="display:none">Times continue</button></div>
+              <br>
+              <div><button id = "testcalc" style="display:none">Continue</button></div>
             </fieldset>
     </div>
 
