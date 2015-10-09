@@ -1,26 +1,27 @@
 $(document).ready(function(){
 
+
+
 	//Show ref container
-	$('#maint_calculate').click(function (){
-    	if(document.getElementById('calculate').checked) {
-        	$('#demonstrate').hide();
-        	$('#lccinsert').hide();
-        	$('#new_con_data').hide();
-        	$('#maint_con_data').hide();
-        	$('#ref_con_data').hide();
-        	$('#lcccon').hide();
-        	$('#simulate').hide();
-        	//disable("calcMaintButton");
-        	//&disable("calcRefurbButton");
-        	disable("nb_nocoats");
-        	$('#maint_spec').show();
-        	$('#maint_lcccalculate').show();
-        }
-     });
+	/*$('#refContSurfPrep').click(function (){
+		refcalcSurfPrep = $('#ref_surfprep_in').val();
+		$('#ref_lcccalculate').show();
+		$('#ref_surfprep_in').hide();
+		$('#ref_showplease').hide();
+		$('#refProjectCurrency').hide();
+		$('#ref_surfpreptag').hide();
+		$('#ref_surfshow').hide();
+		$('#projectCurrency').hide();
+		$('#refContSurfPrep').hide();
+		disable("ref_surf_prep");
+		$('#ref_testcalc').show();
+     });*/
 
 		//ref surface preparation function selectors
 	$('#ref_surf_prep').on('change', function() {
+		console.log("nu i ref først");
 		var surfprep = document.getElementById("ref_surf_prep").value;
+		console.log("nu i ref");
 		$('#surfpreptag').show(); 
 		$('#surfshow').show();
 		$('#showplease').show();
@@ -48,4 +49,4 @@ $(document).ready(function(){
 		}
 	});
 
-	});
+});

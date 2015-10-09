@@ -174,6 +174,8 @@ $(document).ready(function(){
 		}
 
 		$('#ref_spec').show();
+		$('#ref_surf_prep').show();
+		console.log("nu nede i maint");
 	});
 
 	// Calculates sqm prices and  for the selected number of lines
