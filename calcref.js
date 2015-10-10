@@ -3,7 +3,7 @@ $(document).ready(function(){
 
 
 	//Show ref container
-	/*$('#refContSurfPrep').click(function (){
+	$('#refContSurfPrep').click(function (){
 		refcalcSurfPrep = $('#ref_surfprep_in').val();
 		$('#ref_lcccalculate').show();
 		$('#ref_surfprep_in').hide();
@@ -15,37 +15,39 @@ $(document).ready(function(){
 		$('#refContSurfPrep').hide();
 		disable("ref_surf_prep");
 		$('#ref_testcalc').show();
-     });*/
+     });
 
 		//ref surface preparation function selectors
 	$('#ref_surf_prep').on('change', function() {
 		console.log("nu i ref først");
-		var surfprep = document.getElementById("ref_surf_prep").value;
+		var ref_surfprep = document.getElementById("ref_surf_prep").value;
 		console.log("nu i ref");
-		$('#surfpreptag').show(); 
-		$('#surfshow').show();
-		$('#showplease').show();
-		$('#refsurfprep_in').show();
+		console.log("rwf_surfprep er : " + ref_surfprep);
+
+		$('#ref_surfpreptag').show(); 
+		$('#ref_surfprep').show();
+
+
+		$('#ref_showplease').show();
+		$('#ref_surfprep_in').show();
 		$('#refContSurfPrep').show();
-		
-		//enable("nb_nocoats");
+		enable("ref_nocoats");
 
-		if(surfprep == "St 2"){
-			$('#surfshow').text(surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
-
+		if(ref_surfprep == "St 2"){
+			$('#ref_surfshow').text(ref_surfprep);
+			$('#refProjectCurrency').show();
 		}
-		if(surfprep =="Sa 1"){
-			$('#surfshow').text(surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
+		if(ref_surfprep =="Sa 1"){
+			$('#ref_surfshow').text(ref_surfprep);
+			$('#refProjectCurrency').show();
 		}
-		if(surfprep == "Sa 2½"){
-			$('#surfshow').text(surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
+		if(ref_surfprep == "Sa 2½"){
+			$('#ref_surfshow').text(ref_surfprep);
+			$('#refProjectCurrency').show();
 		}
-		if(surfprep =="Sa 3"){
-			$('#surfshow').text(surfprep);
-			$('.projectCurrency').text(currency + " " + "per SQM");
+		if(ref_surfprep =="Sa 3"){
+			$('#ref_surfshow').text(ref_surfprep);
+			$('#refProjectCurrency').show();
 		}
 	});
 
