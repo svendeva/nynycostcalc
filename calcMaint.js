@@ -112,10 +112,12 @@ $(document).ready(function(){
 
 	$('#maint_testcalc').click(function (){
 		if(lccobj.maintsub.coats == 1){
-			lccobj.maintsub.sqmprice1 = enlinie();
+			enlinie();
 			$('#maintline1').hide();
 			disable("maint_nocoats");
 			$('#maint_spec').hide();
+			console.log("totcost1 er nu : " + lccobj.maintsub.totcost1);
+			$('#calcMaintCost').attr("value",lccobj.maintsub.totcost1);
 		}
 		if(lccobj.maintsub.coats == 2){
 			enlinie();

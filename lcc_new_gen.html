@@ -267,7 +267,7 @@
           <fieldset>
 
 
-          <legend>Maintenance</legend>
+          <legend>Maintenance </legend>
             <table id="maint_calc_data">
               <tr>
                 <th class="projectlength">Maintenance Cost/sqm</th>
@@ -319,10 +319,10 @@
               </table>
           </fieldset>
           <fieldset>
-              <legend>Calculate maintenence</legend>
-                  <table id="calc_maint_data">
+              <legend>Calculate maintenance</legend>
+                  <table id="calc_ref_data">
                       <tr>
-                          <th class="projectlength">Mantenance cost</th>
+                          <th class="projectlength">Maintenance cost</th>
                           <th><input type="text" id ="calcMaintCost" class="costinput" value=""/></th>
                       </tr> 
                       <tr>
@@ -330,7 +330,21 @@
                       </tr>
 
                   </table>
-          </fieldset>   
+          </fieldset>
+
+          <fieldset>
+              <legend>Calculate refurbishment</legend>
+                  <table id="calc_ref_data">
+                      <tr>
+                          <th class="projectlength">Refurbishment cost</th>
+                          <th><input type="text" id ="calcRefCost" class="costinput" value=""/></th>
+                      </tr> 
+                      <tr>
+                         <button id = "refCalcReturn" type="button"  class="new_return_button" style = "display:none">Return</button>
+                      </tr>
+
+                  </table>
+          </fieldset>     
         </div>
 
 
@@ -584,27 +598,29 @@
                <span id = "ref_surfshow" class="surfshow"> </span>&nbsp
                <span id = "ref_showplease" style="display:none">Please input the surface preparation cost in </span>&nbsp <span id = "refProjectCurrency" class = "projectCurrency" style="display:none">
              </span>&nbsp <input type="text" id="ref_surfprep_in" style="display:none"/>
-               <span><button id ="refContSurfPrep"style="display:none">NB Continue</button></span>
- <!--
-              <div id = "nbline1" style="display:none" class="nblines">
-                <span>Product 1</span> &nbsp <input type="text" id="nb_product1"/>
-                <span>Dft 1</span> &nbsp <input type="text" id="nb_dft1" class="dft"/>
-                <span>Price 1</span> &nbsp <input type="text" id="nb_price1" class="dft"/>
-                <span>Solids 1</span> &nbsp <input type="text" id="nb_solids1" class="dft"/>
-                <span>VOC 1</span> &nbsp <input type="text" id="nb_VOC1" class="dft"/>
-                <span>Loss 1</span> &nbsp <input type="text" id="nb_loss1" class="dft"/>
-                <span>Appl cost 1</span> &nbsp <input type="text" id="nb_applcost1" class="dft"/>
-              </div>-->
-
-              <!--<div id = "nbline2" style="display:none" class="nblines">
-                <span>Product 2</span> &nbsp <input type="text" id="nb_product2"/>
-                <span>Dft 2</span> &nbsp <input type="text" id="nb_dft2" class="dft"/>
-                <span>Price 2</span> &nbsp <input type="text" id="nb_price2" class="dft"/>
-                <span>Solids 2</span> &nbsp <input type="text" id="nb_solids2" class="dft"/>
-                <span>VOC 2</span> &nbsp <input type="text" id="nb_VOC2" class="dft"/>
-                <span>Loss 2</span> &nbsp <input type="text" id="nb_loss2" class="dft"/>
-                <span>Appl cost 2</span> &nbsp <input type="text" id="nb_applcost2" class="dft"/>
+               <span><button id ="refContSurfPrep"style="display:none">Refurbishment Continue</button></span>
+ 
+              <div id = "refline1" style="display:none" class="nblines">
+                <span>Product 1</span> &nbsp <input type="text" id="ref_product1"/>
+                <span>Dft 1</span> &nbsp <input type="text" id="ref_dft1" class="dft"/>
+                <span>Price 1</span> &nbsp <input type="text" id="ref_price1" class="dft"/>
+                <span>Solids 1</span> &nbsp <input type="text" id="ref_solids1" class="dft"/>
+                <span>VOC 1</span> &nbsp <input type="text" id="ref_VOC1" class="dft"/>
+                <span>Loss 1</span> &nbsp <input type="text" id="ref_loss1" class="dft"/>
+                <span>Appl cost 1</span> &nbsp <input type="text" id="ref_applcost1" class="dft"/>
               </div>
+
+              <div id = "refline2" style="display:none" class="nblines">
+                <span>Product 2</span> &nbsp <input type="text" id="ref_product2"/>
+                <span>Dft 2</span> &nbsp <input type="text" id="ref_dft2" class="dft"/>
+                <span>Price 2</span> &nbsp <input type="text" id="ref_price2" class="dft"/>
+                <span>Solids 2</span> &nbsp <input type="text" id="ref_solids2" class="dft"/>
+                <span>VOC 2</span> &nbsp <input type="text" id="ref_VOC2" class="dft"/>
+                <span>Loss 2</span> &nbsp <input type="text" id="ref_loss2" class="dft"/>
+                <span>Appl cost 2</span> &nbsp <input type="text" id="ref_applcost2" class="dft"/>
+              </div>
+
+              <!--
               <div id = "nbline3" style="display:none" class="nblines">
                 <span>Product 3</span> &nbsp <input type="text" id="nb_product3"/>
                 <span>Dft 3</span> &nbsp <input type="text" id="nb_dft3" class="dft"/>
@@ -647,8 +663,8 @@
                 <span>  Time to refurbishment (years)</span> &nbsp <input type="text" id="nb_refurb_time" class="dft"/>
               </div><br>
               <div><button id = "nb_time_btn" style="display:none">Times continue</button></div>
-              <br>
-              <div><button id = "testcalc" style="display:none">Continue</button></div>-->
+              <br>-->
+              <div><button id = "ref_testcalc" style="display:none">Continue</button></div>
             </fieldset>
     </div>
 

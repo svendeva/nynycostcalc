@@ -105,7 +105,6 @@ $(document).ready(function(){
 			$('#projectCurrency').hide();
 			$('#nbContSurfPrep').hide();
 			disable("nb_surf_prep");
-			
 			$('#nb_nocoats').show();
      });
 
