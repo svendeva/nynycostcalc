@@ -354,7 +354,11 @@ ul#opCols li h2 {
 #nbsurfprep_in{
 	width: 75px;
 	text-align: center;
+}
 
+#maintsurfprep_in{
+	width: 75px;
+	text-align: center;
 }
 
 #ref_surfprep_in{
