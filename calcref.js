@@ -92,7 +92,7 @@ $(document).ready(function(){
 	$('#ref_testcalc').click(function (){
 		if(lccobj.refsub.coats == 1){
 			enlinie();
-			$('#calcRefCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
+			$('#calcRefCost').attr("value",lccobj.refsub.sqmprice1.toFixed(2));
 			$('#refline1').hide();
 			disable("ref_nocoats");
 			$('#ref_testcalc').hide();
@@ -102,7 +102,8 @@ $(document).ready(function(){
 			enlinie();
 			tolinie();
 			lccobj.refsub.totsqmprice = lccobj.refsub.sqmprice1 + lccobj.refsub.sqmprice2;
-			$('#calcRefCost').attr("value",lccobj.refsub.totsqmprice.toFixed(2));
+			lccobj.refsub.totcost = Number(lccobj.refsub.totcost1)+Number(lccobj.refsub.totcost2);
+			$('#calcRefCost').attr("value",lccobj.refsub.totcost);
 			$('#refline1').hide();
 			disable("ref_nocoats");
 			$('#testcalc').hide();
@@ -176,7 +177,7 @@ $(document).ready(function(){
 		lccobj.refsub.applcost1 = parseFloat($('#ref_applcost1').val());
 		lccobj.refsub.area = parseFloat($('#ref_per').val());
 		lccobj.refsub.surfprepcost = parseFloat($('#ref_surfprep_in').val());
-		//calculates regfurbishment blasting cost
+		//calculates refurbishment blasting cost
 		lccobj.refsub.blastcost  = structurearea*lccobj.refsub.surfprepcost;
 		//calculates refurbishment application cost
 		lccobj.refsub.applcost1 = lccobj.refsub.applcost1*structurearea;
@@ -198,30 +199,12 @@ $(document).ready(function(){
 		lccobj.refsub.area = parseFloat($('#ref_per').val());
 		lccobj.refsub.surfprepcost = parseFloat($('#ref_surfprep_in').val());
 
-
-		// Touch up alternativ
-		if($('#reftucheck2').is(":checked")) {
-			lccobj.refsub.tf2 = 0;
-			//calculates maintenance blasting cost
-			//lccobj.maintsub.blastcost  = (structurearea*(lccobj.maintsub.area/100)*1.1)*lccobj.maintsub.surfprepcost;
-			//calculates maintenance application cost
-			lccobj.refsub.applcost2 = lccobj.refsub.applcost2*(structurearea*(lccobj.refsub.area/100)*1.2);
-			// calculates maintenance paintcost
-			lccobj.refsub.pricearea2 = ((lccobj.refsub.dft2*lccobj.refsub.price2*lccobj.refsub.loss2)/(lccobj.refsub.solids2*10))*(structurearea* (lccobj.refsub.area/100)*1.2);
-			//calculates maintenance total cost
-			lccobj.refsub.totcost2 = (lccobj.refsub.applcost2 + lccobj.refsub.pricearea2).toFixed(0);
-		}
-
-		//Full coat alternativ
-		if($('#maintfccheck2').is(":checked")) {
-			lccobj.maintsub.tf2 = 1;
-			//calculates maintenance application cost
-			lccobj.maintsub.applcost2 = lccobj.maintsub.applcost2*structurearea;
-			// calculates maintenance paintcost
-			lccobj.maintsub.pricearea2 = ((lccobj.maintsub.dft2*lccobj.maintsub.price2*lccobj.maintsub.loss2)/(lccobj.maintsub.solids2*10))*structurearea;
-			//calculates maintenance total cost
-			lccobj.maintsub.totcost2 = (lccobj.maintsub.applcost2 + lccobj.maintsub.pricearea2).toFixed(0);
-		}
+		//calculates refurbishment application cost
+		lccobj.refsub.applcost2 = lccobj.refsub.applcost2*structurearea;
+		// calculates maintenance paintcost
+		lccobj.refsub.pricearea2 = ((lccobj.refsub.dft2*lccobj.refsub.price2*lccobj.refsub.loss2)/(lccobj.refsub.solids2*10))*structurearea;
+		//calculates maintenance total cost
+		lccobj.refsub.totcost2 = (lccobj.refsub.applcost2 + lccobj.refsub.pricearea2).toFixed(0);
 	}
 /*
 	function trelinie() {
