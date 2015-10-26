@@ -92,7 +92,7 @@ $(document).ready(function(){
 	$('#ref_testcalc').click(function (){
 		if(lccobj.refsub.coats == 1){
 			enlinie();
-			$('#calcRefCost').attr("value",lccobj.refsub.sqmprice1.toFixed(2));
+			$('#calcRefCost').attr("value",lccobj.refsub.totcost1);
 			$('#refline1').hide();
 			disable("ref_nocoats");
 			$('#ref_testcalc').hide();
