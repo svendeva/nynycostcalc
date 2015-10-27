@@ -61,14 +61,14 @@ $(document).ready(function(){
 			$('#refline1').show();
 			$('#refline2').show();
 			$('#refline3').show();
-		}/*
-		if(lccobj.nbsub.coats ==4){
-			$('.nblines').hide();
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
 		}
+		if(lccobj.refsub.coats ==4){
+			$('.reflines').hide();
+			$('#refline1').show();
+			$('#refline2').show();
+			$('#refline3').show();
+			$('#refline4').show();
+		}/*
 		if(lccobj.nbsub.coats ==5){
 			$('.nblines').hide();
 			$('#nbline1').show();
