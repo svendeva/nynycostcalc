@@ -11,7 +11,7 @@
 			"file": "lcc_new_gen.html",
 			"settings":
 			{
-				"buffer_size": 37580,
+				"buffer_size": 37603,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,7 +51,7 @@
 			"file": "calcref.js",
 			"settings":
 			{
-				"buffer_size": 13150,
+				"buffer_size": 12520,
 				"line_ending": "Windows"
 			}
 		}
@@ -114,7 +114,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 5,
 			"sheets":
 			[
 				{
@@ -122,15 +122,15 @@
 					"file": "lcc_new_gen.html",
 					"settings":
 					{
-						"buffer_size": 37580,
+						"buffer_size": 37603,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								34440,
-								34440
+								35185,
+								35185
 							]
 						],
 						"settings":
@@ -140,7 +140,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 18312.0,
+						"translation.y": 19040.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -247,7 +247,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 4872.0,
+						"translation.y": 756.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -257,15 +257,15 @@
 					"file": "calcref.js",
 					"settings":
 					{
-						"buffer_size": 13150,
+						"buffer_size": 12520,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9634,
-								9634
+								4807,
+								4807
 							]
 						],
 						"settings":
@@ -274,7 +274,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3500.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -331,6 +331,10 @@
 		"height": 500.0,
 		"selected_items":
 		[
+			[
+				"",
+				"/C/Asus WebStorage/jgc@svjo.dk/MySyncFolder/Angular/InformIt-Pearson/Projects/Pearson.sublime-project"
+			]
 		],
 		"width": 380.0
 	},
