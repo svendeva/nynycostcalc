@@ -11,7 +11,7 @@
 			"file": "lcc_new_gen.html",
 			"settings":
 			{
-				"buffer_size": 37603,
+				"buffer_size": 37130,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,7 +51,7 @@
 			"file": "calcref.js",
 			"settings":
 			{
-				"buffer_size": 12520,
+				"buffer_size": 12523,
 				"line_ending": "Windows"
 			}
 		}
@@ -122,15 +122,15 @@
 					"file": "lcc_new_gen.html",
 					"settings":
 					{
-						"buffer_size": 37603,
+						"buffer_size": 37130,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								35185,
-								35185
+								35834,
+								35834
 							]
 						],
 						"settings":
@@ -140,7 +140,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 19040.0,
+						"translation.y": 18824.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -257,15 +257,15 @@
 					"file": "calcref.js",
 					"settings":
 					{
-						"buffer_size": 12520,
+						"buffer_size": 12523,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4807,
-								4807
+								2327,
+								2327
 							]
 						],
 						"settings":
@@ -274,7 +274,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3500.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

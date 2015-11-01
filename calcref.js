@@ -76,15 +76,15 @@ $(document).ready(function(){
 			$('#refline3').show();
 			$('#refline4').show();
 			$('#refline5').show();
-		}/*
-		if(lccobj.nbsub.coats ==6){
-			$('#nbline1').show();
-			$('#nbline2').show();
-			$('#nbline3').show();
-			$('#nbline4').show();
-			$('#nbline5').show();
-			$('#nbline6').show();
-		}*/
+		}
+		if(lccobj.refsub.coats ==6){
+			$('#refline1').show();
+			$('#refline2').show();
+			$('#refline3').show();
+			$('#refline4').show();
+			$('#refline5').show();
+			$('#refline6').show();
+		}
 		$('#ref_testcalc').show();
 	});
 
