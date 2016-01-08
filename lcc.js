@@ -2,6 +2,12 @@ $(document).ready(function(){
 
         $("#insert").click(function () {
         	if(document.getElementById('insert').checked) {
+        		console.log("nu fjernes nb calc fra insert");
+				$('#nb_spec').hide();
+				$('#nb_lcccalculate').hide();
+
+
+
         		$('#specification').hide();
 	        	$('#demonstrate').hide();
 	        	$('#lcccalculate').hide();
@@ -15,6 +21,11 @@ $(document).ready(function(){
         
         $("#demo").click(function (){
         	if(document.getElementById('demo').checked) {
+        		console.log("nu fjernes nb calc");
+				$('#nb_spec').hide();
+				$('#nb_lcccalculate').hide();
+
+
         		$('#specification').hide();
 	        	$('#lccinsert').hide();
 	        	$('#lcccalculate').hide();

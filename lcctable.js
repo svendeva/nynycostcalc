@@ -12,6 +12,7 @@ $(document).ready(function(){
 
 
 		if(document.getElementById('demo').checked) {
+			
 			$("#lcctable tbody").empty();
 
 			var newmainttime = $('#new_maint_time').val();
@@ -21,6 +22,8 @@ $(document).ready(function(){
 			var refmainttime = $('#ref_maint_time').val();
 			var newcost = $('#new_cost').val();
 			var refcost = $('#ref_cost').val();
+
+
 		}
 		if(document.getElementById('insert').checked) {
 			var retime =$('#refurb_calc_time').val();

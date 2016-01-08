@@ -209,6 +209,7 @@ $(document).ready(function(){
 		lccobj.nbsub.applcost1 = parseFloat($('#nb_applcost1').val());
 		lccobj.nbsub.spgr1 = parseFloat($('#nb_spgr1').val());
 		lccobj.nbsub.sqmprice1= parseInt(calcSurfPrep) + ((lccobj.nbsub.dft1*lccobj.nbsub.price1*lccobj.nbsub.loss1)/(lccobj.nbsub.solids1*10)) + lccobj.nbsub.applcost1;
+		console.log(lccobj.nbsub.sqmprice1);
 		return lccobj.nbsub.sqmprice1;
 	}
 
