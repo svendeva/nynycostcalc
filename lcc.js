@@ -5,6 +5,7 @@ $(document).ready(function(){
         		console.log("nu fjernes nb calc fra insert");
 				$('#nb_spec').hide();
 				$('#nb_lcccalculate').hide();
+				$('#lcccon').hide();
 
 
 

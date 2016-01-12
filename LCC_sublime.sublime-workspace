@@ -27,7 +27,7 @@
 			"file": "lcc.js",
 			"settings":
 			{
-				"buffer_size": 2798,
+				"buffer_size": 2823,
 				"line_ending": "Windows"
 			}
 		},
@@ -105,6 +105,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"lcccon",
+			"calculate",
 			"new construction",
 			"insert",
 			"demo",
@@ -141,8 +143,8 @@
 						"selection":
 						[
 							[
-								14725,
-								14741
+								36152,
+								36152
 							]
 						],
 						"settings":
@@ -152,7 +154,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 8741.0,
+						"translation.y": 19605.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -189,15 +191,15 @@
 					"file": "lcc.js",
 					"settings":
 					{
-						"buffer_size": 2798,
+						"buffer_size": 2823,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								181,
-								181
+								269,
+								269
 							]
 						],
 						"settings":
@@ -222,8 +224,8 @@
 						"selection":
 						[
 							[
-								564,
-								557
+								358,
+								338
 							]
 						],
 						"settings":
@@ -303,8 +305,8 @@
 						"selection":
 						[
 							[
-								595,
-								595
+								4126,
+								4132
 							]
 						],
 						"settings":
@@ -313,7 +315,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 3393.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
