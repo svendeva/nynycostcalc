@@ -113,7 +113,9 @@ $(document).ready(function(){
 		if(lccobj.nbsub.coats == 1){
 			lccobj.nbsub.sqmprice1 = enlinie();
 			$('#calcNewCost').attr("value",lccobj.nbsub.sqmprice1.toFixed(2));
-
+			newcost = lccobj.nbsub.sqmprice1;
+			console.log("Nu er new cost lig med : " + lccobj.nbsub.sqmprice1);
+			console.log("Nu er in itial cost li : " + newcost*100000);
 			$('#nbline1').hide();
 			disable("nb_nocoats");
 			$('#testcalc').hide();
@@ -126,6 +128,7 @@ $(document).ready(function(){
 			lccobj.nbsub.sqmprice2 = tolinie();
 			lccobj.nbsub.totsqmprice = lccobj.nbsub.sqmprice1 + lccobj.nbsub.sqmprice2;
 			$('#calcNewCost').attr("value",lccobj.nbsub.totsqmprice.toFixed(2));
+
 			$('#nbline1').hide();
 			disable("nb_nocoats");
 			$('#testcalc').hide();

@@ -6,9 +6,6 @@ $(document).ready(function(){
 				$('#nb_spec').hide();
 				$('#nb_lcccalculate').hide();
 				$('#lcccon').hide();
-
-
-
         		$('#specification').hide();
 	        	$('#demonstrate').hide();
 	        	$('#lcccalculate').hide();
@@ -25,8 +22,6 @@ $(document).ready(function(){
         		console.log("nu fjernes nb calc");
 				$('#nb_spec').hide();
 				$('#nb_lcccalculate').hide();
-
-
         		$('#specification').hide();
 	        	$('#lccinsert').hide();
 	        	$('#lcccalculate').hide();
@@ -36,6 +31,11 @@ $(document).ready(function(){
 	        	$('#ref_con_data').show();
 	        	$('#simulate').show();
         	}
+    	});
+
+    	 $("#calcsim").click(function (){
+        	console.log("nu er vi så i calcsim functionen");
+        	$('#simulate').show();
     	});
 
 	//Starts the application

@@ -11,10 +11,10 @@ $(document).ready(function(){
 		$('#ref_surfshow').hide();
 		$('#projectCurrency').hide();
 		$('#refContSurfPrep').hide();
-		console.log("nu er vi ved no_coats");
 		disable("ref_surf_prep");
 		$('#ref_nocoats').show();
 		$('#ref_testcalc').show();
+		console.log("Her skal knappen komme");
      });
 
 		//ref surface preparation function selectors
@@ -97,6 +97,7 @@ $(document).ready(function(){
 			disable("ref_nocoats");
 			$('#ref_testcalc').hide();
 			$('#ref_spec').hide();
+			$('#simulate').show();
 		}
 		if(lccobj.refsub.coats == 2){
 			enlinie();
@@ -186,7 +187,7 @@ $(document).ready(function(){
 		// calculates refurbishment paintcost
 		lccobj.refsub.pricearea1 = ((lccobj.refsub.dft1*lccobj.refsub.price1*lccobj.refsub.loss1)/(lccobj.refsub.solids1*10))*structurearea;
 		//calculates refurbishment total cost
-		lccobj.refsub.totcost1 = (lccobj.refsub.blastcost + lccobj.refsub.applcost1 + lccobj.refsub.pricearea1).toFixed(0);
+		lccobj.refsub.totcost1 = ((lccobj.refsub.blastcost + lccobj.refsub.applcost1 + lccobj.refsub.pricearea1)/structurearea).toFixed(2);
 		
 	}
 

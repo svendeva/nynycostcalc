@@ -11,7 +11,7 @@
 			"file": "lcc_new_gen.html",
 			"settings":
 			{
-				"buffer_size": 37131,
+				"buffer_size": 37221,
 				"line_ending": "Windows"
 			}
 		},
@@ -27,7 +27,7 @@
 			"file": "lcc.js",
 			"settings":
 			{
-				"buffer_size": 2823,
+				"buffer_size": 2957,
 				"line_ending": "Windows"
 			}
 		},
@@ -35,7 +35,7 @@
 			"file": "calcNew.js",
 			"settings":
 			{
-				"buffer_size": 10375,
+				"buffer_size": 10544,
 				"line_ending": "Windows"
 			}
 		},
@@ -51,7 +51,7 @@
 			"file": "calcref.js",
 			"settings":
 			{
-				"buffer_size": 11900,
+				"buffer_size": 11943,
 				"line_ending": "Windows"
 			}
 		},
@@ -59,12 +59,12 @@
 			"file": "lcctable.js",
 			"settings":
 			{
-				"buffer_size": 6563,
+				"buffer_size": 7103,
 				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/User/Choose Browser.sublime-build",
 	"command_palette":
 	{
 		"height": 0.0,
@@ -105,6 +105,13 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"Time to maintenance",
+			"calcNewCost",
+			"cost/sqm",
+			"lcc",
+			"newcost",
+			"simulate",
+			"start simuilation",
 			"lcccon",
 			"calculate",
 			"new construction",
@@ -136,15 +143,35 @@
 					"file": "lcc_new_gen.html",
 					"settings":
 					{
-						"buffer_size": 37131,
+						"buffer_size": 37221,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								36152,
-								36152
+								8393,
+								8412
+							],
+							[
+								9704,
+								9723
+							],
+							[
+								10612,
+								10631
+							],
+							[
+								11775,
+								11794
+							],
+							[
+								12675,
+								12694
+							],
+							[
+								21040,
+								21059
 							]
 						],
 						"settings":
@@ -154,7 +181,7 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 19605.0,
+						"translation.y": 1859.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -171,8 +198,8 @@
 						"selection":
 						[
 							[
-								0,
-								0
+								3701,
+								3701
 							]
 						],
 						"settings":
@@ -181,7 +208,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5023.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -191,15 +218,23 @@
 					"file": "lcc.js",
 					"settings":
 					{
-						"buffer_size": 2823,
+						"buffer_size": 2957,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								269,
-								269
+								548,
+								556
+							],
+							[
+								1067,
+								1075
+							],
+							[
+								1217,
+								1225
 							]
 						],
 						"settings":
@@ -207,7 +242,7 @@
 							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 756.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -217,15 +252,15 @@
 					"file": "calcNew.js",
 					"settings":
 					{
-						"buffer_size": 10375,
+						"buffer_size": 10544,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								358,
-								338
+								3715,
+								3704
 							]
 						],
 						"settings":
@@ -234,7 +269,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 5656.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -271,15 +306,15 @@
 					"file": "calcref.js",
 					"settings":
 					{
-						"buffer_size": 11900,
+						"buffer_size": 11943,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								11478,
-								11478
+								7010,
+								7010
 							]
 						],
 						"settings":
@@ -288,7 +323,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 7812.0,
+						"translation.y": 5292.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -298,15 +333,15 @@
 					"file": "lcctable.js",
 					"settings":
 					{
-						"buffer_size": 6563,
+						"buffer_size": 7103,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4126,
-								4132
+								3078,
+								3078
 							]
 						],
 						"settings":
@@ -315,7 +350,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3393.0,
+						"translation.y": 2891.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"

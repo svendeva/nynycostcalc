@@ -12,9 +12,7 @@ $(document).ready(function(){
 
 
 		if(document.getElementById('demo').checked) {
-			
 			$("#lcctable tbody").empty();
-
 			var newmainttime = $('#new_maint_time').val();
 			var newrefurbtime =$('#new_refurb_time').val;
 			var retime =$('#new_refurb_time').val();
@@ -23,13 +21,19 @@ $(document).ready(function(){
 			var newcost = $('#new_cost').val();
 			var refcost = $('#ref_cost').val();
 
-
 		}
 		if(document.getElementById('insert').checked) {
 			var retime =$('#refurb_calc_time').val();
 			var refurbtime =$('#ref_refurb_calc_time').val();
 			var newcost = $('#new_calc_cost').val();
 			var refcost = $('#ref_calc_cost').val();
+		}	
+
+		if(document.getElementById('calculate').checked) {
+			var retime =$('#nb_calc_refurb_time').val();
+			var refurbtime =$('#nb_calc_refurb_time').val();
+			var newcost = $('#calcNewCost').val();
+			var refcost = $('#calcRefCost').val();
 		}			
 
 
@@ -101,6 +105,13 @@ $(document).ready(function(){
 			maintcost = $('#maint_calc_cost').val();
 			refmainttime = $('#ref_maint_calc_time').val();
 			refrefurbtime = $('#ref_refurb_calc_time').val();
+		}
+		if(document.getElementById('calculate').checked) {
+			newmainttime = $('#nb_calc_maint_time').val();
+			newrefurbtime = $('#nb_calc_refurb_time').val();
+			maintcost = $('#calcMaintCost').val();
+			refmainttime = $('#nb_calc_maint_time').val();
+			refrefurbtime = $('#nb_calc_refurb_time').val();
 		}
 
 		// Fills the new maintenance within new refurbishment
